@@ -1,0 +1,22 @@
+[
+    {
+        "name": "LockedInArea51",
+        "exe": "../../ArcadeGames/LockedInArea51/TigerGameJam.exe",
+        "poster": "../assets/images/posters/"
+    },
+    {
+        "name": "MasterWorkforceProject",
+        "exe": "../../ArcadeGames/MasterWorkforceProject/Windows/ProyectoEmergencia.exe",
+        "poster": "../assets/images/posters/"
+    },
+    {
+        "name": "MemoriesOfLadein",
+        "exe": "../../ArcadeGames/MemoriesOfLadein/MemoriesOfLadien_v1.1.3/Project_Fallen_Angel.exe",
+        "poster": "../assets/images/posters/"
+    },
+    {
+        "name": "VanishingStars",
+        "exe": "../../ArcadeGames/VanishingStars/Windows/Vanishing Stars.exe",
+        "poster": "../assets/images/posters/"
+    }
+]
