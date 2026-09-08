@@ -51,6 +51,11 @@ GAMES = [
         "cover": _cover("escape_from_area_51.png"),
     },
 
+    {
+      "name" : "Medieval_Mission_1",
+      "path": r"..\..\ArcadeGames\Medieval_Mission_1\Windows\Medieval_Mission_1.html",
+      "cover": _cover(None)
+    },
     # HTML/browser-based game example:
     # {"name": "Some Web Game", "path": r"..\..\ArcadeGames\SomeWebGame\index.html", "cover": _cover(None)},
 
@@ -87,7 +92,7 @@ def launch_game(path):
       # Launch with cwd set to the game's own folder so it can find its
       # data/asset files (Unreal/Unity builds often assume this).
 
-      subprocess.Popen([str(full_path)], cwd=str(full_path.parent))
+      subprocess.Popen([str(full_path)], cwd=str(full_path.parent), shell=True)
 
     else:
       # Fallback for any other file type: let Windows decide how to open it.
