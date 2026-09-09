@@ -123,15 +123,11 @@
     padding: 0 20px 0 10px;
   }
 
-
-
   .tiger-area img {
     max-width: 180px;
     max-height: 135px;
     object-fit: contain;
   }
-
-  
 
   /* ============================================================
      GREEN BAR
@@ -161,15 +157,15 @@
     flex: 1;
     position: relative;
     overflow-y: auto;
-  }
-
-  .game-area canvas.noise-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    display: block;
+    background-image: url("assets/images/launcher/pixel_bg.png");
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 128px 128px;
+    /* Keep the source pixels crisp instead of letting the browser
+       smooth/blur them when tiled at native size. */
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 
   .game-grid {
@@ -201,8 +197,11 @@
   }
 
   .game-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-8px);
+    /* border-color: rgba(255, 255, 255, 0.5);
+    border: 5px solid rgba(255, 255, 255, 0.5); */
+    border-color: rgb(255, 187, 0);
+    border: 5px solid rgb(255, 187, 0);
   }
 
   .game-card:active {
@@ -221,6 +220,29 @@
     font-size: 13px;
     text-align: center;
     padding: 10px;
+  }
+
+  /* ============================================================
+     CAROUSEL CARD
+     ============================================================ */
+
+  .carousel-game-card {
+    width: 189px;
+    height: 255px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 187, 0, 0.28);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .carousel-game-card img {
+    width: 159px;
+    height: 225px;
+    object-fit: contain;
+    pointer-events: none;
   }
 
   /* ============================================================
@@ -267,10 +289,8 @@
     </div>
   </header>
 
-  
-
   <!-- POSTER CAROUSEL -->
-  <div id="gameCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <div id="gameCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2100">
     <div class="carousel-inner" id="carouselInner"></div>
   </div>
 
@@ -287,7 +307,6 @@
 
   <!-- GAME AREA -->
   <div class="game-area">
-    <canvas class="noise-bg" id="noiseCanvas"></canvas>
     <div class="game-grid" id="gameGrid"></div>
   </div>
 
@@ -325,130 +344,6 @@ const GAMES = [
 ];
 
 /* ============================================================
-   NOISY GRADIENT BACKGROUND
-   Port of GradientBackground.paintEvent(): a low-res pixel grid,
-   colored by a top-to-bottom gradient plus random per-pixel and
-   per-cluster noise, then scaled back up without smoothing.
-   ============================================================ */
-
-function drawNoiseBackground(canvas) {
-  const dpr = window.devicePixelRatio || 1;
-  const rect = canvas.getBoundingClientRect();
-
-  const width = Math.max(1, Math.round(rect.width));
-  const height = Math.max(1, Math.round(rect.height));
-
-  canvas.width = width * dpr;
-  canvas.height = height * dpr;
-
-  const ctx = canvas.getContext('2d');
-
-  const pixelSize = 10;
-  const smallWidth = Math.max(1, Math.floor(width / pixelSize));
-  const smallHeight = Math.max(1, Math.floor(height / pixelSize));
-
-  // Deterministic PRNG (seed 12345) so the pattern is stable, like
-  // random.seed(12345) in the original.
-  let seed = 12345;
-  function rand() {
-    seed = (seed * 1103515245 + 12345) & 0x7fffffff;
-    return seed / 0x7fffffff;
-  }
-  function randInt(min, max) {
-    return Math.floor(rand() * (max - min + 1)) + min;
-  }
-
-  const small = document.createElement('canvas');
-  small.width = smallWidth;
-  small.height = smallHeight;
-  const sctx = small.getContext('2d');
-  const imgData = sctx.createImageData(smallWidth, smallHeight);
-
-  const original = { r: 0x3E, g: 0x45, b: 0x59 };
-  const dark = { r: 18, g: 21, b: 28 };
-
-  function setPixel(x, y, r, g, b) {
-    const idx = (y * smallWidth + x) * 4;
-    imgData.data[idx] = r;
-    imgData.data[idx + 1] = g;
-    imgData.data[idx + 2] = b;
-    imgData.data[idx + 3] = 255;
-  }
-
-  function getPixel(x, y) {
-    const idx = (y * smallWidth + x) * 4;
-    return {
-      r: imgData.data[idx],
-      g: imgData.data[idx + 1],
-      b: imgData.data[idx + 2],
-    };
-  }
-
-  for (let y = 0; y < smallHeight; y++) {
-    const progress = smallHeight > 1 ? y / (smallHeight - 1) : 0;
-    const t = Math.pow(progress, 1.4);
-
-    const baseR = Math.round(original.r * (1 - t) + dark.r * t);
-    const baseG = Math.round(original.g * (1 - t) + dark.g * t);
-    const baseB = Math.round(original.b * (1 - t) + dark.b * t);
-
-    for (let x = 0; x < smallWidth; x++) {
-      const variation = randInt(-7, 7);
-
-      const r = Math.max(0, Math.min(255, baseR + variation));
-      const g = Math.max(0, Math.min(255, baseG + variation));
-      const b = Math.max(0, Math.min(255, baseB + variation));
-
-      setPixel(x, y, r, g, b);
-    }
-  }
-
-  // Larger irregular pixel clusters
-  const clusterCount = Math.floor(smallWidth * smallHeight * 0.025);
-
-  for (let i = 0; i < clusterCount; i++) {
-    const x = randInt(0, smallWidth - 1);
-    const y = randInt(0, smallHeight - 1);
-    const clusterSize = randInt(1, 4);
-    const brightness = randInt(-12, 12);
-
-    for (let cy = 0; cy < clusterSize; cy++) {
-      for (let cx = 0; cx < clusterSize; cx++) {
-        const px = x + cx;
-        const py = y + cy;
-
-        if (px < smallWidth && py < smallHeight) {
-          const current = getPixel(px, py);
-
-          const r = Math.max(0, Math.min(255, current.r + brightness));
-          const g = Math.max(0, Math.min(255, current.g + brightness));
-          const b = Math.max(0, Math.min(255, current.b + brightness));
-
-          setPixel(px, py, r, g, b);
-        }
-      }
-    }
-  }
-
-  sctx.putImageData(imgData, 0, 0);
-
-  // Scale the pixel-art pattern back up without smoothing.
-  ctx.imageSmoothingEnabled = false;
-  ctx.scale(dpr, dpr);
-  ctx.drawImage(small, 0, 0, smallWidth, smallHeight, 0, 0, width, height);
-}
-
-function refreshNoiseBackground() {
-  const canvas = document.getElementById('noiseCanvas');
-  drawNoiseBackground(canvas);
-}
-
-window.addEventListener('resize', () => {
-  clearTimeout(window.__noiseResizeTimer);
-  window.__noiseResizeTimer = setTimeout(refreshNoiseBackground, 120);
-});
-
-/* ============================================================
    BOOTSTRAP POSTER CAROUSEL
    ============================================================ */
 
@@ -465,9 +360,12 @@ function renderCarousel(games) {
     item.innerHTML = `
       <div class="d-flex justify-content-center align-items-center"
            style="height: 290px;">
-        <img src="${game.poster}"
-             alt="${game.name}"
-             style="height: 250px; width: 205px; object-fit: contain;">
+
+        <div class="carousel-game-card">
+          <img src="${game.poster}"
+               alt="${game.name}">
+        </div>
+
       </div>
     `;
 
@@ -548,12 +446,36 @@ function showToast(message) {
 
 /* ============================================================
    INIT
+   ============================================================
+
+   The canvas is redrawn any time its actual on-screen size
+   changes — not just on window resize. A ResizeObserver on the
+   .game-area container catches every cause of that: window
+   resizing, the Pixelify Sans web font swapping in after load
+   (which can reflow the header and change .game-area's height),
+   scrollbars appearing/disappearing, or the page being embedded
+   in a panel that resizes without the browser window itself
+   resizing. Relying on window's "resize" event alone misses all
+   of those, which is why the canvas could end up drawn at a
+   stale (too-small) size that never got refreshed.
    ============================================================ */
 
 window.addEventListener('load', () => {
-  refreshNoiseBackground();
   renderCarousel(GAMES);
   renderGames(GAMES);
+
+  const gameArea = document.querySelector('.game-area');
+  let resizeTimer = null;
+
+  const ro = new ResizeObserver(() => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(refreshNoiseBackground, 50);
+  });
+
+  ro.observe(gameArea);
+
+  // Draw once immediately too, in case layout is already stable.
+  refreshNoiseBackground();
 
   // To load games from a real games.json instead of the sample
   // array above, uncomment:
