@@ -5,10 +5,10 @@ from tkinter import messagebox
 
 # Define your games here: "Display Name": "Full path to executable or script"
 GAMES = {
-    "Memories of Ladein": r"C:\Users\cicnr\Escritorio\MemoriesOfLadein\MemoriesOfLadien_v1.1.3\Project_Fallen_Angel.exe",
-    "Proyecto Emergencia": r"C:\Users\cicnr\Escritorio\MasterWorkforceProject\ProyectoEmergencia.exe",
-    "Vanishing stars": r"C:\Users\cicnr\Escritorio\VanishingStars\Windows\Vanishing Stars.exe",
-    "Escape from Area 51": r"C:\Users\cicnr\Escritorio\LockedInArea51\TigerGameJam.exe",
+    "Memories of Ladein": r"..\..\ArcadeGames\MemoriesOfLadein\MemoriesOfLadien_v1.1.3\Project_Fallen_Angel.exe",
+    "Proyecto Emergencia": r"..\..\ArcadeGames\MasterWorkforceProject\ProyectoEmergencia.exe",
+    "Vanishing stars": r"..\..\ArcadeGames\VanishingStars\Windows\Vanishing Stars.exe",
+    "Escape from Area 51": r"..\..\ArcadeGames\LockedInArea51\TigerGameJam.exe",
 }
 
 
