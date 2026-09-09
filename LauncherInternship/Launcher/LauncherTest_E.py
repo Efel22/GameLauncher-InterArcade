@@ -258,7 +258,7 @@ class GameCard(QLabel):
         self.exe_path = exe_path
 
         # Poster size
-        self.setFixedSize(139, 205)
+        self.setFixedSize(179, 245)
 
         # Makes the mouse cursor show that it is clickable
         self.setCursor(Qt.PointingHandCursor)
@@ -284,6 +284,8 @@ class GameCard(QLabel):
 
         else:
             self.setText("No Poster")
+
+        
 
         self.setAlignment(Qt.AlignCenter)
 
