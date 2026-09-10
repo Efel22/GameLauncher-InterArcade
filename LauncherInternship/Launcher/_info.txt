@@ -1,17 +1,11 @@
 * * * * * HOW TO ADD MORE GAMES ? * * * * *
 
-1. Go to games.json (it should be in the same folder as 'Launcher').
-2. Copy the information from an existing game.
-3. Add it as a new element to the JSON list.
-4. Make sure to update the name, poster, and exe paths for the new game. ('Name' is meant for reference only)
-
-
 COLORS:
 
-green: 018445
-yellow: FFD140
-light gray: 47535D
-dark gray: 3E4559
+green: #018445
+yellow: #FFD140
+light gray: #47535D
+dark gray: #3E4559
 
 
 
