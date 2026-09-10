@@ -1,12 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Inter Arcade Games</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet"> -->
 
 <style>
 
@@ -18,319 +26,920 @@
       font-display: swap;
   }
 
-  /* @font-face {
+  /*
+  @font-face {
       font-family: "Changa One";
       src: url("/assets/font/ChangaOne/ChangaOne-Regular.ttf") format("truetype");
       font-weight: 400;
       font-style: normal;
       font-display: swap;
-  } */
+  }
+  */
 
   :root {
-    /* ---- Core palette (from the reference mock) ---- */
-    --green-deep:   #016c33;   /* header / pill button / library underline */
-    --green-header: #00843D;
-    --gold:         #FED141;   /* card border / badge / footer */
-    --gold-dark:    #d5aa1e;
-    --cream-bg:     #e3f1e0;   /* main page background */
-    --cream-card:   #fbfbf6;   /* card face */
-    --ink:          #1c1c1c;   /* titles / strong text */
-    --muted:        #767c73;   /* "Playtime" subtext */
 
-    /* --font: "Pixelify Sans"; */
+    /* ---- Core palette ---- */
+
+    --green-deep:   #016c33;
+    --green-header: #00843D;
+
+    --gold:         #FED141;
+    --gold-dark:    #d5aa1e;
+
+    --cream-bg:     #e3f1e0;
+    --cream-card:   #fbfbf6;
+
+    --ink:          #1c1c1c;
+    --muted:        #767c73;
+
+    --toolbar:     #e3f1e0;
+    --text-carouselhint: #ffffff;
+    --text-gametitle: #ffffff;
+    --text-type: #ffffff;
+
     --font: "Audiowide";
-    --card-w: 152px;
-    --card-h: 214px;
+
+    --card-w: 180px;
+    --card-h: 253px;
+
   }
 
-  * { box-sizing: border-box; }
+  * {
+    box-sizing: border-box;
+  }
 
-  html, body {
+  html,
+  body {
     margin: 0;
     padding: 0;
     min-height: 100%;
     font-family: var(--font), sans-serif;
-    background: var(--cream-bg);
+    background-color: var(--cream-bg);
+    background-image: url("assets/images/launcher/bg_interbayamon.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+
+    text-shadow:
+      1px 1px 0 rgba(0, 0, 0, 0.35),
+      2px 2px 4px rgba(0, 0, 0, 0.25);
+
   }
+  /* body {
+
+    margin: 0;
+    padding: 0;
+
+    min-height: 100%;
+
+    font-family: var(--font), sans-serif;
+
+    background: var(--cream-bg);
+
+    overflow: hidden;
+
+  } */
 
   #app {
+
     display: flex;
+
     flex-direction: column;
+
     min-height: 100vh;
+
   }
 
-  button { font-family: inherit; cursor: pointer; }
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+
 
   /* ============================================================
      HEADER
      ============================================================ */
 
   header.top-bar {
+
     height: 64px;
+
     background-color: var(--green-header);
+
     display: grid;
+
     grid-template-columns: 1fr auto 1fr;
+
     align-items: center;
+
     padding: 0 22px;
+
     flex-shrink: 0;
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.445);
+
   }
 
-  /* Two logo variants share the same slot: an image lockup (uses
-     the existing name_interbayamon.png artwork) and a text/badge
-     lockup built from CSS. Toggle LOGO_MODE at the top of the
-     <script> block below to switch between them — both stay in
-     the markup so switching is a one-line change. If the image
-     is missing, it falls back to the text lockup automatically. */
+
+  /* ============================================================
+     LOGO
+     ============================================================ */
+
   .brand {
+
     display: none;
+
     align-items: center;
+
     justify-content: left;
+
     padding: 5px 8px;
+
     border-radius: 4px;
+
     font-family: var(--font), sans-serif;
-    /* font-weight: 700; */
+
     flex-shrink: 0;
+
   }
 
-  #app.logo-mode-image #brandImage { display: flex; }
-  #app.logo-mode-text #brandText { display: flex; }
-  #app.logo-mode-image.logo-fallback-active #brandImage { display: none; }
-  #app.logo-mode-image.logo-fallback-active #brandText { display: flex; }
+  #app.logo-mode-image #brandImage {
+    display: flex;
+  }
+
+  #app.logo-mode-text #brandText {
+    display: flex;
+  }
+
+  #app.logo-mode-image.logo-fallback-active #brandImage {
+    display: none;
+  }
+
+  #app.logo-mode-image.logo-fallback-active #brandText {
+    display: flex;
+  }
 
   .brand-logo-img {
+
     height: 44px;
+
     width: auto;
+
     object-fit: contain;
+
     display: block;
+
     background: var(--cream-bg);
+
     padding: 3px;
+
     border-radius: 3px;
+
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+
   }
 
   .brand-inter {
+
     background: #ffffff;
+
     color: var(--green-deep);
+
     padding: 5px 10px;
+
     border-radius: 4px 0 0 4px;
+
     font-size: 20px;
+
     letter-spacing: 1px;
+
   }
 
   .brand-bayamon {
+
     background: var(--gold);
+
     color: #2a2a2a;
+
     padding: 5px 12px;
+
     border-radius: 0 4px 4px 0;
+
     font-size: 16px;
+
     letter-spacing: 1px;
+
   }
+
+
+  /* ============================================================
+     HEADER TITLE
+     ============================================================ */
 
   .title {
+
     grid-column: 2;
+
     text-align: center;
+
     color: #ffffff;
+
     font-family: var(--font), sans-serif;
+
     font-size: 50px;
-    /* font-weight: 700; */
+
     letter-spacing: 1px;
+
+    white-space: nowrap;
+
   }
-  
+
+
+  /* ============================================================
+     TIGER
+     ============================================================ */
 
   .header-icons {
+
     grid-column: 3;
+
     justify-self: end;
+
     display: flex;
+
     align-items: center;
+
     gap: 12px;
+
     flex-shrink: 0;
+
   }
 
   .header-icons img.tiger-icon {
+
     height: 46px;
+
     width: auto;
+
     object-fit: contain;
+
     display: block;
+
   }
 
+
   /* ============================================================
-     TOOLBAR (Library tab + Game On! button, on a white bar)
+     TOOLBAR
      ============================================================ */
 
   .toolbar {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     margin: 0;
+
     padding: 14px 28px;
-    background: #ffffff;
+
+    background: var(--toolbar);
+
     border-radius: 0;
+
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+
     flex-shrink: 0;
-}
+
+  }
 
   .tab {
+
     background: none;
+
     border: none;
-    color: var(--green-deep);
+
+    color: var(--green-header);
+
     font-weight: 800;
+
     font-size: 25px;
+
     letter-spacing: 1px;
+
     text-transform: uppercase;
+
     padding: 0 0 6px;
+
     border-bottom: 3px solid var(--green-deep);
+
   }
 
   .game-on-btn {
+
     background: var(--green-deep);
+
     color: #ffffff;
+
     border: none;
+
     font-weight: 800;
+
     font-size: 20px;
+
     padding: 10px 22px;
+
     border-radius: 20px;
+
     box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+
   }
 
+
   /* ============================================================
-     GAME AREA / GRID
+     GAME AREA
      ============================================================ */
 
   .game-area {
+
     flex: 1;
-    overflow-y: auto;
-    padding: 10px 28px 20px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    padding: 10px 0 20px;
+
   }
 
-  .game-grid {
+
+  /* ============================================================
+     CAROUSEL
+     ============================================================ */
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+
     display: flex;
-    flex-wrap: wrap;
-    gap: 26px 22px;
+
+    align-items: center;
+
+    justify-content: center;
+
+
   }
+
+
+  /*
+     The game track fills the carousel.
+
+     The cards themselves are positioned by JavaScript
+     based on their distance from the center card.
+  */
+
+  .game-track {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+  }
+
+
+  /* ============================================================
+     GAME CARD WRAPPER
+     ============================================================ */
+
+  .game-card-wrap {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: var(--card-w);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    transform-origin: center center;
+
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.45s ease,
+      filter 0.45s ease;
+
+    will-change: transform, opacity;
+
+  }
+
 
   /* ============================================================
      GAME CARD
      ============================================================ */
 
-  .game-card-wrap {
-    width: var(--card-w);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-  }
-
   .game-card {
+
     width: var(--card-w);
+
     height: var(--card-h);
+
     background: var(--cream-card);
+
     border: 3px solid var(--green-header);
+
     border-radius: 10px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     overflow: hidden;
-    transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
-  }
 
-  .game-card-wrap:hover .game-card {
-    transform: translateY(-6px);
-    border: 5px solid var(--gold);
-    box-shadow: 0 8px 14px rgba(0,0,0,0.18);
-  }
+    box-shadow: 0 6px 12px rgba(0,0,0,0.16);
 
-  .game-card-wrap:active .game-card {
-    transform: translateY(-1px);
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+
   }
 
   .game-card img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
     pointer-events: none;
+
+    user-select: none;
+
   }
 
   .game-card .no-poster {
-    color: var(--muted);
+
+    color: var(--text-gametitle);
+
     font-size: 12px;
+
     text-align: center;
+
     padding: 10px;
+
   }
 
-  .game-title {
-    margin-top: 10px;
-    text-align: center;
-    color: var(--ink);
-    font-weight: 800;
-    font-size: 15px;
-    text-transform: uppercase;
-    line-height: 1.25;
-    max-width: var(--card-w);
-  }
-
-  .game-type {
-    margin-top: 2px;
-    color: var(--muted);
-    font-size: 12px;
-    font-weight: 600;
-  }
 
   /* ============================================================
-     FOOTER STRIP (repeating image asset)
+     CENTER CARD
+
+     The selected game gets larger and more prominent.
+     ============================================================ */
+
+  .game-card-wrap.is-center {
+
+    z-index: 5;
+
+  }
+
+  .game-card-wrap.is-center .game-card {
+
+    border: 4px solid var(--gold);
+
+    box-shadow:
+      0 12px 28px rgba(0,0,0,0.25),
+      0 0 0 2px rgba(254,209,65,0.25);
+
+  }
+
+
+  /* ============================================================
+     SIDE CARDS
+     ============================================================ */
+
+  .game-card-wrap.is-side {
+
+    z-index: 3;
+
+  }
+
+
+  /* ============================================================
+     GAME TITLE
+     ============================================================ */
+
+  .game-title {
+
+    margin-top: 6px;
+
+    text-align: center;
+
+    color: var(--text-gametitle);
+
+    font-weight: 800;
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+
+    line-height: 1.25;
+
+    max-width: var(--card-w);
+
+    opacity: 0;
+
+    transform: translateY(-4px);
+
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+
+    pointer-events: none;
+
+  }
+
+  .game-card-wrap.is-center .game-title {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+
+  /* ============================================================
+     GAME TYPE
+     ============================================================ */
+
+  .game-type {
+
+    margin-top: 3px;
+
+    color: var(--text-type);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+
+  }
+
+  .game-card-wrap.is-center .game-type {
+
+    opacity: 1;
+
+  }
+
+
+  /* ============================================================
+     CAROUSEL ARROWS
+     ============================================================ */
+
+  .carousel-btn {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 58px;
+
+    height: 58px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 20;
+
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+
+    transition:
+      transform 0.15s ease,
+      background-color 0.15s ease;
+
+  }
+
+  .carousel-btn:hover {
+
+    background: var(--gold-dark);
+
+    transform: translateY(-50%) scale(1.08);
+
+  }
+
+  .carousel-btn:active {
+
+    transform: translateY(-50%) scale(0.96);
+
+  }
+
+  .carousel-btn.left {
+
+    left: 28px;
+
+  }
+
+  .carousel-btn.right {
+
+    right: 28px;
+
+  }
+
+
+  /* ============================================================
+     CAROUSEL INDICATORS
+     ============================================================ */
+
+  .carousel-indicators {
+
+    position: absolute;
+
+    bottom: 4px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    z-index: 15;
+
+    /* padding: 20px; */
+
+  }
+
+  .carousel-indicator {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    padding: 0;
+
+    /* background: rgba(1,108,51,0.3); */
+    background: var(--green-deep);
+
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+
+  }
+
+  .carousel-indicator.active {
+
+    background: var(--gold);
+
+    transform: scale(1.8);
+
+  }
+
+
+  /* ============================================================
+     SELECTED GAME INSTRUCTION
+     ============================================================ */
+
+  .carousel-hint {
+    color: var(--text-carouselhint);
+    position: relative;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%);
+    width: max-content;
+    text-align: center;
+    z-index: 10;
+    font-size: 20px;
+    
+  }
+
+
+  /* ============================================================
+     FOOTER STRIP
      ============================================================ */
 
   .footer-strip {
+    position: relative;
+    z-index: 1;
+
     height: 94px;
+
     flex-shrink: 0;
+
     background-image: url("assets/images/launcher/yellow_checker.png");
+
     background-repeat: repeat-x;
+
     background-position: 0 bottom;
-    background-size: auto 94px;
+
+    background-size: auto 84px;
+
     image-rendering: pixelated;
+
     image-rendering: -moz-crisp-edges;
+
     image-rendering: crisp-edges;
 
     animation: checker-scroll 0.5s linear infinite;
+
   }
 
   @keyframes checker-scroll {
+
     from {
       background-position: 0 bottom;
     }
 
     to {
-      background-position: -94px bottom;
+      background-position: -84px bottom;
     }
+
   }
+
 
   /* ============================================================
      LAUNCH TOAST
      ============================================================ */
 
   #toast {
+
     position: fixed;
+
     left: 50%;
-    bottom: 50px;
+
+    bottom: 120px;
+
     transform: translate(-50%, 20px);
+
     background: #1c2030;
+
     border: 1px solid rgba(255,255,255,0.15);
+
     color: #fff;
+
     padding: 18px 24px;
+
     font-size: 18px;
+
     min-width: 320px;
+
     max-width: 450px;
+
     border-radius: 6px;
+
     opacity: 0;
+
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 10;
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+
+    z-index: 100;
+
+    text-align: center;
+
   }
 
   #toast.show {
+
     opacity: 1;
+
     transform: translate(-50%, 0);
+
   }
+
+
+  /* ============================================================
+     RESPONSIVE ADJUSTMENTS
+     ============================================================ */
+
+  @media (max-width: 900px) {
+
+    .title {
+
+      font-size: 36px;
+
+    }
+
+    .carousel-btn {
+
+      width: 48px;
+
+      height: 48px;
+
+      font-size: 28px;
+
+    }
+
+    .carousel-btn.left {
+      left: 12px;
+    }
+
+    .carousel-btn.right {
+      right: 12px;
+    }
+
+  }
+
+  @media (max-width: 650px) {
+
+    .title {
+
+      font-size: 25px;
+
+    }
+
+    .brand-logo-img {
+
+      height: 36px;
+
+    }
+
+    .header-icons img.tiger-icon {
+
+      height: 36px;
+
+    }
+
+    .toolbar {
+
+      padding: 10px 16px;
+
+    }
+
+    .tab {
+
+      font-size: 19px;
+
+    }
+
+    .game-on-btn {
+
+      font-size: 16px;
+
+      padding: 8px 16px;
+
+    }
+
+  }
+
 </style>
+
 </head>
 
 <body>
@@ -338,37 +947,121 @@
 <div id="app">
 
   <!-- HEADER -->
-  <header class="top-bar">
-    <!-- Image lockup: existing name_interbayamon.png artwork -->
-    <div class="brand" id="brandImage">
-      <img class="brand-logo-img" src="assets/images/launcher/name_interbayamon.png" alt="Inter Bayamón"
-           onerror="document.getElementById('app').classList.add('logo-fallback-active');">
-    </div>
-    <!-- Text lockup: CSS-built "INTER / BAYAMÓN" badge -->
-    <div class="brand" id="brandText">
-      <span class="brand-inter">INTER</span>
-      <span class="brand-bayamon">BAYAMÓN</span>
-    </div>
 
-    <div class="title">Inter Arcade Games</div>
-    <div class="header-icons">
-      <img class="tiger-icon" src="assets/images/launcher/tiger_interbayamon.png" alt=""
-           onerror="this.style.display='none';">
-    </div>
+  <header class="top-bar">
+
+<!-- Image lockup -->
+
+<div class="brand" id="brandImage">
+
+  <img
+    class="brand-logo-img"
+    src="assets/images/launcher/name_interbayamon.png"
+    alt="Inter Bayamón"
+    onerror="document.getElementById('app').classList.add('logo-fallback-active');"
+  >
+
+</div>
+
+
+<!-- Text lockup -->
+
+<div class="brand" id="brandText">
+
+  <span class="brand-inter">INTER</span>
+
+  <span class="brand-bayamon">BAYAMÓN</span>
+
+</div>
+
+
+<div class="title">
+  Inter Arcade Games
+</div>
+
+
+<div class="header-icons">
+
+  <img
+    class="tiger-icon"
+    src="assets/images/launcher/tiger_interbayamon.png"
+    alt=""
+    onerror="this.style.display='none';"
+  >
+
+</div>
+
   </header>
 
   <!-- TOOLBAR -->
-  <div class="toolbar">
-    <div class="tab">Library</div>
-    <div class="game-on-btn">Game on!</div>
-  </div>
+
+  <!-- <div class="toolbar">
+
+    <div class="tab">
+      Library
+    </div>
+
+    <div class="game-on-btn">
+      Game on!
+    </div>
+
+  </div> -->
 
   <!-- GAME AREA -->
+
   <div class="game-area">
-    <div class="game-grid" id="gameGrid"></div>
+
+<div class="carousel">
+
+  <!-- LEFT ARROW -->
+
+  <button
+    class="carousel-btn left"
+    id="prevButton"
+    aria-label="Previous game"
+  >
+    ‹
+  </button>
+
+
+  <!-- GAME TRACK -->
+
+  <div
+    class="game-track"
+    id="gameGrid"
+  ></div>
+
+
+  <!-- RIGHT ARROW -->
+
+  <button
+    class="carousel-btn right"
+    id="nextButton"
+    aria-label="Next game"
+  >
+    ›
+  </button>
+
+
+  <!-- DOT INDICATORS -->
+
+  <div
+    class="carousel-indicators"
+    id="carouselIndicators"
+  ></div>
+
+  
+
+</div>
+  </div>
+
+  <!-- CONTROL HINT -->
+  <div class="carousel-hint">
+    Use ← → to browse • Click the center game to play
   </div>
 
   <!-- FOOTER STRIP -->
+
   <div class="footer-strip"></div>
 
 </div>
@@ -376,150 +1069,736 @@
 <div id="toast"></div>
 
 <script>
+
 /* ============================================================
    LOGO MODE
-   Switch between the existing "name_interbayamon.png" artwork
-   and the CSS text/badge lockup by changing this one value.
-     'image' -> use assets/images/launcher/name_interbayamon.png
-     'text'  -> use the "INTER" / "BAYAMÓN" text badges
-   If 'image' is selected but the file fails to load, the page
-   automatically falls back to the text lockup.
+
+   'image' -> use name_interbayamon.png
+   'text'  -> use INTER / BAYAMÓN CSS badges
    ============================================================ */
 
-const LOGO_MODE = 'image'; // 'image' | 'text'
+const LOGO_MODE = 'image';
+
 
 /* ============================================================
    GAMES DATA
-   In the Python app this came from games.json on disk:
-   [{ "name": ..., "poster": ..., "exe": ... }, ...]
-   In the browser we can't launch a local .exe, so "exe" is kept
-   as metadata and launch_game() below shows a toast instead.
-   "playtime" is optional display metadata — add/adjust it per
-   game, or drop the field to fall back to a default label.
-   Replace this array with your real game list, or fetch it:
-     fetch('games.json').then(r => r.json()).then(renderGames)
    ============================================================ */
 
 const GAMES = [
-  { 
-    name: "Locked In Area 51",  
-    poster: "assets/images/posters/locked_in_area_51.png",   
-    xe: "../../ArcadeGames/LockedInArea51/TigerGameJam.exe",                                 
-    type: "2D Platformer" },
-  { 
-    name: "Memories of Ladein", 
-    poster: "assets/images/posters/memories_of_ladein.png",   
-    exe: "../../ArcadeGames/MemoriesOfLadein/MemoriesOfLadien_v1.1.3/Project_Fallen_Angel.exe", 
-    type: "2D Platformer" },
-  { 
-    name: "Project Emergency",  
-    poster: "assets/images/posters/project_emergency.png",    
-    exe: "../../ArcadeGames/MasterWorkforceProject/Windows/ProyectoEmergencia.exe",            
-    type: "Survival" },
-  { 
-    name: "Vanishing Stars",    
-    poster: "assets/images/posters/vanishing_stars.png",      
-    exe: "../../ArcadeGames/VanishingStars/Windows/Vanishing Stars.exe",                       
-    type: "Action" },
+
+  {
+    name: "Locked In Area 51",
+
+    poster: "assets/images/posters/locked_in_area_51.png",
+
+    exe: "../../ArcadeGames/LockedInArea51/TigerGameJam.exe",
+
+    type: "2D Platformer"
+  },
+
+  {
+    name: "Memories of Ladein",
+
+    poster: "assets/images/posters/memories_of_ladein.png",
+
+    exe: "../../ArcadeGames/MemoriesOfLadein/MemoriesOfLadien_v1.1.3/Project_Fallen_Angel.exe",
+
+    type: "2D Platformer"
+  },
+
+  {
+    name: "Project Emergency",
+
+    poster: "assets/images/posters/project_emergency.png",
+
+    exe: "../../ArcadeGames/MasterWorkforceProject/Windows/ProyectoEmergencia.exe",
+
+    type: "Survival"
+  },
+
+  {
+    name: "Vanishing Stars",
+
+    poster: "assets/images/posters/vanishing_stars.png",
+
+    exe: "../../ArcadeGames/VanishingStars/Windows/Vanishing Stars.exe",
+
+    type: "Action"
+  }
+
 ];
 
+
 /* ============================================================
-   GAME CARDS
+   CAROUSEL STATE
+   ============================================================ */
+
+let currentIndex = 0;
+
+
+/*
+   How far apart the cards are horizontally.
+
+   Increase this value if you want more space between posters.
+*/
+
+const CARD_SPACING = 225;
+
+
+/*
+   How much smaller the side cards become.
+
+   Center card = 1.15
+   One card away = 0.82
+   Two cards away = 0.65
+*/
+
+const CENTER_SCALE = 1.25;
+
+const SIDE_SCALE = 0.82;
+
+const FAR_SCALE = 0.65;
+
+
+/* ============================================================
+   CREATE GAME CARDS
    ============================================================ */
 
 function renderGames(games) {
-  const grid = document.getElementById('gameGrid');
-  grid.innerHTML = '';
 
-  games.forEach(game => {
-    const wrap = document.createElement('div');
-    wrap.className = 'game-card-wrap';
-    wrap.title = game.name;
+  const track = document.getElementById('gameGrid');
 
-    const card = document.createElement('div');
-    card.className = 'game-card';
+  const indicators =
+    document.getElementById('carouselIndicators');
 
-    const img = new Image();
-    img.alt = game.name;
-    img.src = game.poster;
+  track.innerHTML = '';
+
+  indicators.innerHTML = '';
+
+
+  games.forEach((game, index) => {
+
+    /*
+       Create card wrapper
+    */
+
+    const wrap =
+      document.createElement('div');
+
+    wrap.className =
+      'game-card-wrap';
+
+    wrap.dataset.index =
+      index;
+
+    wrap.title =
+      game.name;
+
+
+    /*
+       Create poster card
+    */
+
+    const card =
+      document.createElement('div');
+
+    card.className =
+      'game-card';
+
+
+    /*
+       Create image
+    */
+
+    const img =
+      new Image();
+
+    img.alt =
+      game.name;
+
+    img.src =
+      game.poster;
+
+    img.draggable =
+      false;
+
+
     img.onerror = () => {
-      card.innerHTML = `<div class="no-poster">No Poster<br>${game.name}</div>`;
+
+      card.innerHTML =
+        `<div class="no-poster">
+          No Poster
+          <br>
+          ${game.name}
+        </div>`;
+
     };
+
+
     card.appendChild(img);
 
-    const titleEl = document.createElement('div');
-    titleEl.className = 'game-title';
-    titleEl.textContent = game.name;
 
-    const typeEl = document.createElement('div');
-    typeEl.className = 'game-type';
-    typeEl.textContent = `${game.type || '—'}`;
+    /*
+       Game title
+    */
+
+    const titleEl =
+      document.createElement('div');
+
+    titleEl.className =
+      'game-title';
+
+    titleEl.textContent =
+      game.name;
+
+
+    /*
+       Game type
+    */
+
+    const typeEl =
+      document.createElement('div');
+
+    typeEl.className =
+      'game-type';
+
+    typeEl.textContent =
+      game.type || '—';
+
+
+    /*
+       Put everything together
+    */
 
     wrap.appendChild(card);
+
     wrap.appendChild(titleEl);
+
     wrap.appendChild(typeEl);
 
-    wrap.addEventListener('click', () => launchGame(game));
 
-    grid.appendChild(wrap);
+    /*
+       Clicking a game:
+       
+       - If it is already centered -> launch
+       - Otherwise -> move it to center
+    */
+
+    wrap.addEventListener('click', () => {
+
+      if (index === currentIndex) {
+
+        launchGame(game);
+
+      } else {
+
+        currentIndex = index;
+
+        updateCarousel();
+
+      }
+
+    });
+
+
+    track.appendChild(wrap);
+
+
+    /*
+       Create indicator dot
+    */
+
+    const indicator =
+      document.createElement('button');
+
+    indicator.className =
+      'carousel-indicator';
+
+    indicator.setAttribute(
+      'aria-label',
+      `Select ${game.name}`
+    );
+
+
+    indicator.addEventListener(
+      'click',
+      () => {
+
+        currentIndex = index;
+
+        updateCarousel();
+
+      }
+    );
+
+
+    indicators.appendChild(indicator);
+
   });
+
+
+  updateCarousel();
+
 }
+
+
+/* ============================================================
+   UPDATE CAROUSEL
+
+   This is the main part that creates the
+   Just Dance-style visual layout.
+   ============================================================ */
+
+function updateCarousel() {
+
+  const cards =
+    document.querySelectorAll(
+      '.game-card-wrap'
+    );
+
+  const indicators =
+    document.querySelectorAll(
+      '.carousel-indicator'
+    );
+
+
+  cards.forEach((card, index) => {
+
+    /*
+       Calculate the card's position relative
+       to the currently selected game.
+    */
+
+    let offset =
+      index - currentIndex;
+
+
+    /*
+       With a small number of games, make the
+       carousel wrap around.
+
+       Example:
+
+       Current = 0
+
+       Game 3 becomes the card immediately
+       to the left instead of being far away.
+    */
+
+    const total =
+      GAMES.length;
+
+
+    if (offset > total / 2) {
+
+      offset -= total;
+
+    }
+
+    if (offset < -total / 2) {
+
+      offset += total;
+
+    }
+
+
+    /*
+       Horizontal position
+    */
+
+    const x =
+      offset * CARD_SPACING;
+
+
+    /*
+       Scale depending on distance
+    */
+
+    let scale = FAR_SCALE;
+
+    if (offset === 0) {
+
+      scale = CENTER_SCALE;
+
+    } else if (
+      Math.abs(offset) === 1
+    ) {
+
+      scale = SIDE_SCALE;
+
+    }
+
+
+    /*
+       Cards further away become less visible.
+    */
+
+    let opacity = 0.35;
+
+    if (Math.abs(offset) === 1) {
+
+      opacity = 0.72;
+
+    }
+
+    if (offset === 0) {
+
+      opacity = 1;
+
+    }
+
+
+    /*
+       Blur distant cards slightly.
+
+       The center card stays completely sharp.
+    */
+
+    let blur = 1.5;
+
+    if (offset === 0) {
+
+      blur = 0;
+
+    }
+
+
+    /*
+       Apply visual state
+    */
+
+    card.style.transform =
+      `translate(-50%, -50%) translateX(${x}px) scale(${scale})`;
+
+    card.style.opacity =
+      opacity;
+
+    card.style.filter =
+      `blur(${blur}px)`;
+
+
+    /*
+       Z-index
+
+       Center should always be above side cards.
+    */
+
+    card.style.zIndex =
+      10 - Math.abs(offset);
+
+
+    /*
+       State classes
+    */
+
+    card.classList.remove(
+      'is-center',
+      'is-side'
+    );
+
+
+    if (offset === 0) {
+
+      card.classList.add(
+        'is-center'
+      );
+
+    } else {
+
+      card.classList.add(
+        'is-side'
+      );
+
+    }
+
+  });
+
+
+  /*
+     Update indicator dots
+  */
+
+  indicators.forEach(
+    (indicator, index) => {
+
+      indicator.classList.toggle(
+        'active',
+        index === currentIndex
+      );
+
+    }
+  );
+
+}
+
+
+/* ============================================================
+   PREVIOUS GAME
+   ============================================================ */
+
+function previousGame() {
+
+  currentIndex--;
+
+  if (currentIndex < 0) {
+
+    currentIndex =
+      GAMES.length - 1;
+
+  }
+
+  updateCarousel();
+
+}
+
+
+/* ============================================================
+   NEXT GAME
+   ============================================================ */
+
+function nextGame() {
+
+  currentIndex++;
+
+  if (
+    currentIndex >= GAMES.length
+  ) {
+
+    currentIndex = 0;
+
+  }
+
+  updateCarousel();
+
+}
+
+
+/* ============================================================
+   ARROW BUTTONS
+   ============================================================ */
+
+document
+  .getElementById('prevButton')
+  .addEventListener(
+    'click',
+    previousGame
+  );
+
+
+document
+  .getElementById('nextButton')
+  .addEventListener(
+    'click',
+    nextGame
+  );
+
+
+/* ============================================================
+   KEYBOARD CONTROLS
+   ============================================================ */
+
+document.addEventListener(
+  'keydown',
+  (event) => {
+
+    /*
+       Do not interfere with typing
+       into an input if one is ever added.
+    */
+
+    if (
+      event.target.tagName === 'INPUT' ||
+      event.target.tagName === 'TEXTAREA'
+    ) {
+
+      return;
+
+    }
+
+
+    if (event.key === 'ArrowLeft') {
+
+      event.preventDefault();
+
+      previousGame();
+
+    }
+
+
+    if (event.key === 'ArrowRight') {
+
+      event.preventDefault();
+
+      nextGame();
+
+    }
+
+
+    /*
+       Enter launches the currently
+       selected game.
+    */
+
+    if (event.key === 'Enter') {
+
+      event.preventDefault();
+
+      const game =
+        GAMES[currentIndex];
+
+      if (game) {
+
+        launchGame(game);
+
+      }
+
+    }
+
+  }
+);
+
 
 /* ============================================================
    LAUNCH GAME
-   A browser can't spawn a local .exe on its own, so this page
-   is meant to be opened FROM launcher_server.py (run it and it
-   opens this page for you). That server exposes POST /launch,
-   which does the real subprocess.Popen on your machine.
-   If this page was opened directly as a file:// (no server),
-   the fetch below will fail and we tell you so.
+
+   The browser sends the game path to
+   launcher_server.py.
+
+   The Python server handles subprocess.Popen().
    ============================================================ */
 
 function launchGame(game) {
-  showToast(`Launching "${game.name}"...`);
+
+  showToast(
+    `Launching "${game.name}"...`
+  );
+
 
   fetch('/launch', {
+
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ exe: game.exe }),
-  })
-    .then(res => res.json().catch(() => ({ ok: false, error: `HTTP ${res.status}` })))
-    .then(data => {
-      if (data.ok) {
-        showToast(`Launched "${game.name}"`);
-      } else {
-        showToast(`Could not launch "${game.name}": ${data.error || 'unknown error'}`);
-      }
+
+    headers: {
+      'Content-Type': 'application/json'
+    },
+
+    body: JSON.stringify({
+      exe: game.exe
     })
+
+  })
+
+    .then(
+      res =>
+        res.json().catch(
+          () => ({
+            ok: false,
+            error:
+              `HTTP ${res.status}`
+          })
+        )
+    )
+
+    .then(data => {
+
+      if (data.ok) {
+
+        showToast(
+          `Launched "${game.name}"`
+        );
+
+      } else {
+
+        showToast(
+          `Could not launch "${game.name}": ${
+            data.error || 'unknown error'
+          }`
+        );
+
+      }
+
+    })
+
     .catch(() => {
-      showToast(`Could not reach launcher_server.py — run it and open this page from there.`);
+
+      showToast(
+        `Could not reach launcher_server.py — run it and open this page from there.`
+      );
+
     });
+
 }
+
+
+/* ============================================================
+   TOAST
+   ============================================================ */
 
 let toastTimer = null;
-function showToast(message) {
-  const toast = document.getElementById('toast');
-  toast.textContent = message;
-  toast.classList.add('show');
 
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+
+function showToast(message) {
+
+  const toast =
+    document.getElementById('toast');
+
+
+  toast.textContent =
+    message;
+
+
+  toast.classList.add(
+    'show'
+  );
+
+
+  clearTimeout(
+    toastTimer
+  );
+
+
+  toastTimer =
+    setTimeout(
+      () =>
+        toast.classList.remove(
+          'show'
+        ),
+      2500
+    );
+
 }
+
 
 /* ============================================================
    INIT
    ============================================================ */
 
-window.addEventListener('load', () => {
-  document.getElementById('app').classList.add('logo-mode-' + LOGO_MODE);
+window.addEventListener(
+  'load',
+  () => {
 
-  renderGames(GAMES);
+    /*
+       Set logo mode
+    */
 
-  // To load games from a real games.json instead of the sample
-  // array above, uncomment:
-  // fetch('games.json').then(r => r.json()).then(renderGames).catch(() => renderGames(GAMES));
-});
+    document
+      .getElementById('app')
+      .classList.add(
+        'logo-mode-' + LOGO_MODE
+      );
+
+
+    /*
+       Create carousel
+    */
+
+    renderGames(GAMES);
+
+  }
+);
+
 </script>
 
 </body>
+
 </html>
