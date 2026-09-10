@@ -2,8 +2,8 @@
 
 COLORS:
 
-green: #018445
-yellow: #FFD140
+green: #00843D
+yellow: #FED141
 light gray: #47535D
 dark gray: #3E4559
 
