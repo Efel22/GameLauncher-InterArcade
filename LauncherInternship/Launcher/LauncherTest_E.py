@@ -478,12 +478,32 @@ class Launcher(QWidget):
             "Inter-Arcade Games"
         )
 
+        # No title bar / borders - this is what makes it look like a real
+        # kiosk instead of a windowed app.
+        self.setWindowFlags(
+            Qt.FramelessWindowHint
+        )
+
         self.setMinimumSize(
             1000,
             700
         )
 
         self.setup_ui()
+
+
+    # ========================================================
+    # ESCAPE TO QUIT
+    # ========================================================
+    # Frameless means there's no title bar and no X button anymore, so
+    # there'd be no way to close this window at all otherwise - Escape is
+    # the standard "get me out of kiosk mode" key or testing/maintenance.
+    def keyPressEvent(self, event):
+
+        if event.key() == Qt.Key_Escape:
+            self.close()
+        else:
+            super().keyPressEvent(event)
 
 
     # ========================================================
@@ -550,7 +570,7 @@ class Launcher(QWidget):
         )
 
 
-    
+
 
     # ========================================================
     # UI
@@ -883,7 +903,7 @@ if __name__ == "__main__":
 
     window = Launcher()
 
-    window.show()
+    window.showFullScreen()
 
     sys.exit(
         app.exec()
