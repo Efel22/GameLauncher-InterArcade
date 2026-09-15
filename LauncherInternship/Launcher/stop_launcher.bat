@@ -13,7 +13,7 @@ rem AND whose command line contains launcher_server.py - so this
 rem won't touch an unrelated Python process, or an editor/IDE that
 rem merely has this file open.
 powershell -NoProfile -Command ^
-    "Get-CimInstance Win32_Process -Filter \"Name LIKE 'python%'\" | Where-Object { $_.CommandLine -like '*launcher_server.py*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"
+    "Get-CimInstance Win32_Process -Filter \"Name LIKE 'python%%'\" | Where-Object { $_.CommandLine -like '*launcher_server.py*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"
 
 rem Kill ONLY the kiosk Chrome window (matched by --kiosk in its command
 rem line) - not your regular Chrome windows/tabs on this PC.

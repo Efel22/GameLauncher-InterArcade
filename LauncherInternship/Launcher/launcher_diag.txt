@@ -1,18 +1,36 @@
-Diagnostic run: Tue 09/15/2026 13:32:33.41 
+Diagnostic run: Tue 09/15/2026 14:10:51.29 
  
-=== Who am I running as? === 
-kenpc\kenne
+=== Is anything listening on port 8765? === 
+  TCP    127.0.0.1:8765         127.0.0.1:56948        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:56949        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:56950        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:56951        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:56952        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:56953        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:56954        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:56955        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:56956        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:56957        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:60604        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:64594        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:64633        TIME_WAIT       0
+  TCP    127.0.0.1:8765         127.0.0.1:64634        TIME_WAIT       0
  
-=== Whatever is on port 8765 right now (PID + full details) === 
-=== ALL pythonw.exe / python.exe processes, unfiltered === 
-=== ALL cmd.exe processes, unfiltered === 
+=== Test: does "Name LIKE python%" match anything at all? === 
+(empty above this line means the LIKE filter matched zero processes) 
+ 
+=== Test: same query, but unfiltered by name, then filtered on CommandLine in PowerShell === 
 
 
-ProcessId   : 17156
-CommandLine : C:\Windows\system32\cmd.exe /c ""C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInterns
-              hip\Launcher\check_launcher_status.bat" "
+ProcessId   : 41396
+Name        : powershell.exe
+CommandLine : powershell  -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like 
+              '*launcher_server.py*' } | Select-Object ProcessId, Name, CommandLine | Format-List" 
 
 
 
+ 
+=== Test: full combined query exactly as start_launcher.bat runs it (dry run - lists only, does not kill) === 
+(empty above this line means the combined filter matched zero processes) 
  
 Diagnostic saved to launcher_diag.txt 
