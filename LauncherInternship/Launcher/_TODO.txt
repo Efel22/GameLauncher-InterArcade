@@ -1,0 +1,13 @@
+
+1. (DONE) Texto de Titulo y Tipo no son muy visibles (resaltarlos)
+2. Parecen Portadas de Libros, no Juegos 
+    - Maybe tratar con Caset flow DS (try making a stylized version in Canva)
+    - Disco flow PS3
+    
+3. (DONE) Chequea otras animaciones o tweak la animación (try making it slower (x2))
+
+4. Agrega animación al abrir el juego (basada en la Caset)
+5. Fake loading screen
+
+6. Aprende que es lo que esta haciendo el codigo del python server
+7. Background is a blurred version of the game's menu

@@ -59,8 +59,8 @@
 
     --font: "Audiowide";
 
-    --card-w: 180px;
-    --card-h: 253px;
+    --card-w: 283px;
+    --card-h: 210px;
 
   }
 
@@ -83,8 +83,13 @@
     overflow: hidden;
 
     text-shadow:
-      1px 1px 0 rgba(0, 0, 0, 0.35),
-      2px 2px 4px rgba(0, 0, 0, 0.25);
+      -1px -1px 0 rgba(0, 0, 0, 0.8),
+      1px -1px 0 rgba(0, 0, 0, 0.8),
+      -1px  1px 0 rgba(0, 0, 0, 0.8),
+      1px  1px 0 rgba(0, 0, 0, 0.8),
+
+      0px 2px 0 rgba(0, 0, 0, 0.35),
+      4px 4px 20px rgba(0, 0, 0, 0.25);
 
   }
   /* body {
@@ -794,7 +799,7 @@
 
     image-rendering: crisp-edges;
 
-    animation: checker-scroll 0.5s linear infinite;
+    animation: checker-scroll 2.0s linear infinite;
 
   }
 
@@ -1124,6 +1129,16 @@ const GAMES = [
     exe: "../../ArcadeGames/VanishingStars/Windows/Vanishing Stars.exe",
 
     type: "Action"
+  },
+
+  {
+    name: "Vanishing Stars",
+
+    poster: "assets/images/posters/vanishing_stars.png",
+
+    exe: "../../ArcadeGames/VanishingStars/Windows/Vanishing Stars.exe",
+
+    type: "Action"
   }
 
 ];
@@ -1142,7 +1157,7 @@ let currentIndex = 0;
    Increase this value if you want more space between posters.
 */
 
-const CARD_SPACING = 225;
+const CARD_SPACING = 350;
 
 
 /*
