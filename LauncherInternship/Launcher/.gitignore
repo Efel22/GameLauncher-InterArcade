@@ -1,0 +1,16 @@
+# Runtime log output - not source, changes every run
+launcher_log.txt
+launcher_log.old.txt
+
+# Scratch output from check_launcher_status.bat
+launcher_diag.txt
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+
+# Leftover from manual cleanup during development
+_to_delete/
+
+# VS Code Code Runner artifact
+tempCodeRunnerFile.py
