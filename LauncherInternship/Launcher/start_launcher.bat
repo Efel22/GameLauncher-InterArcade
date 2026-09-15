@@ -6,6 +6,28 @@ rem matter where it's placed on the arcade PC, no path to edit.
 set "SCRIPT_DIR=%~dp0"
 cd /d "%SCRIPT_DIR%"
 
+rem ------------------------------------------------------------------
+rem Clean up any previous launcher instance before starting fresh.
+rem
+rem This makes it safe to (re)run this file at any time - after a
+rem crash, after the arcade PC didn't shut down cleanly, or just to
+rem force the Chrome kiosk window back open - without hitting
+rem "file in use" errors or ending up with two kiosk windows.
+rem Matched by command line, so this won't touch unrelated Python
+rem or Chrome processes. Runs before we ever touch launcher_log.txt,
+rem since a leftover process holding it open is exactly what we're
+rem clearing here.
+rem ------------------------------------------------------------------
+
+powershell -NoProfile -Command ^
+    "Get-CimInstance Win32_Process -Filter \"Name LIKE 'python%'\" | Where-Object { $_.CommandLine -like '*launcher_server.py*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"
+powershell -NoProfile -Command ^
+    "Get-CimInstance Win32_Process -Filter \"Name='chrome.exe'\" | Where-Object { $_.CommandLine -like '*--kiosk*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"
+
+rem Give Windows a moment to fully release the log file handle.
+
+timeout /t 1 /nobreak >nul
+
 :loop
 echo [%date% %time%] Starting launcher_server.py... >> launcher_log.txt
 

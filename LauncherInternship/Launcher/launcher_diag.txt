@@ -1,0 +1,18 @@
+Diagnostic run: Tue 09/15/2026 13:32:33.41 
+ 
+=== Who am I running as? === 
+kenpc\kenne
+ 
+=== Whatever is on port 8765 right now (PID + full details) === 
+=== ALL pythonw.exe / python.exe processes, unfiltered === 
+=== ALL cmd.exe processes, unfiltered === 
+
+
+ProcessId   : 17156
+CommandLine : C:\Windows\system32\cmd.exe /c ""C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInterns
+              hip\Launcher\check_launcher_status.bat" "
+
+
+
+ 
+Diagnostic saved to launcher_diag.txt 
