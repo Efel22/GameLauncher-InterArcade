@@ -1,0 +1,174 @@
+/* ============================================================
+     GAME CARD WRAPPER
+     ============================================================ */
+
+.game-card-wrap {
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  width: calc(var(--card-w) * var(--card-scale));
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  cursor: pointer;
+
+  transform-origin: center center;
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s ease,
+    filter 0.45s ease;
+
+  will-change: transform, opacity;
+}
+
+/* ============================================================
+     GAME CARD
+
+     The card is now just a stage: the cartridge artwork
+     sits behind/around the poster, and the poster is inset
+     inside it (like a cartridge label) with padding and
+     rounded corners.
+     ============================================================ */
+
+.game-card {
+  width: calc(var(--card-w) * var(--card-scale));
+
+  height: var(--card-h);
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: transparent;
+
+  overflow: visible;
+}
+
+/*
+     The cartridge frame artwork. Drawn with object-fit: contain
+     so its own proportions are respected, then the poster slot
+     below is positioned as a percentage of the card box to line
+     up with the "screen" area of the artwork.
+  */
+
+.cartridge-frame {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: fill;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 2;
+
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.16));
+
+  transition: filter 0.3s ease;
+}
+
+/*
+     Poster slot: the inset "window" inside the cartridge
+     artwork where the poster image shows through.
+  */
+
+.poster-slot {
+  position: absolute;
+
+  top: var(--cart-inset-top);
+
+  left: var(--cart-inset-left);
+
+  right: var(--cart-inset-right);
+
+  bottom: var(--cart-inset-bottom);
+
+  border-radius: var(--cart-radius);
+
+  overflow: hidden;
+
+  background: var(--cream-card);
+
+  z-index: 5;
+}
+
+.poster-slot img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+.poster-slot .no-poster {
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--ink);
+
+  font-size: 12px;
+
+  text-align: center;
+
+  padding: 10px;
+}
+
+/* ============================================================
+     CENTER CARD
+
+     The selected game gets larger and more prominent.
+     ============================================================ */
+
+.game-card-wrap.is-center {
+  z-index: 5;
+}
+
+.game-card-wrap.is-center .cartridge-frame {
+  filter: drop-shadow(0 0 14px rgba(254, 209, 65, 0.65))
+    drop-shadow(0 12px 28px rgba(0, 0, 0, 0.25));
+}
+
+.game-card-wrap.is-center .poster-slot {
+  box-shadow:
+    0 0 0 3px var(--gold),
+    0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================
+     SIDE CARDS
+     ============================================================ */
+
+.game-card-wrap.is-side {
+  z-index: 3;
+}
+
+

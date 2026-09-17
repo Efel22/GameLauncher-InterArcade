@@ -1,6 +1,6 @@
 
 1. (DONE) Texto de Titulo y Tipo no son muy visibles (resaltarlos)
-2. Parecen Portadas de Libros, no Juegos 
+2. (DONE) Parecen Portadas de Libros, no Juegos 
     - Maybe tratar con Caset flow DS (try making a stylized version in Canva)
     - Disco flow PS3
     

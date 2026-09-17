@@ -1,0 +1,51 @@
+:root {
+  /* ---- Core palette ---- */
+
+  --green-deep: #016c33;
+  --green-header: #00843d;
+
+  --gold: #fed141;
+  --gold-dark: #d5aa1e;
+
+  --cream-bg: #e3f1e0;
+  --cream-card: #fbfbf6;
+
+  --ink: #1c1c1c;
+  --muted: #767c73;
+
+  --toolbar: #e3f1e0;
+  --text-carouselhint: #ffffff;
+  --text-gametitle: #ffffff;
+  --text-type: #ffffff;
+
+  --font-size-gametitle: 30px;
+  --font-size-gametype: 15px;
+  --font-size-carouselhint: 30px;
+
+  --font: "Audiowide";
+
+  --card-w: 210px;
+  --card-h: 283px;
+
+  /*
+       Single knob to make every cartridge + poster bigger or
+       smaller together. 1 = base size (210px wide). Try 1.3,
+       1.5, etc. Card height and carousel spacing both follow
+       this automatically.
+    */
+  --card-scale: 1.75;
+
+  /*
+       Where the "screen" of the cartridge artwork sits,
+       expressed as % insets from each edge of the card.
+       Tune these to match stylized_game_cartridge.png —
+       they control how much of the cartridge border shows
+       around the poster.
+    */
+  --cart-inset-top: 15%;
+  --cart-inset-x: 26%;
+  --cart-inset-left: 25.5%; /* The image is not reallt centered */
+  --cart-inset-right: 26.25%;
+  --cart-inset-bottom: 14%;
+  --cart-radius: 10px;
+}

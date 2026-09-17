@@ -152,3 +152,29 @@ Press Ctrl+C in this window to stop the launcher.
 
 [launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
 [launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[mar 09/15/2026 16:19:59.20] Starting launcher_server.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Opening Chrome in kiosk mode...
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
+[launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -

@@ -1,0 +1,52 @@
+
+
+/* ============================================================
+     CAROUSEL INDICATORS DOTS
+     ============================================================ */
+
+.carousel-indicators {
+  position: absolute;
+
+  bottom: 10px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  z-index: 15;
+
+  /* padding: 20px; */
+}
+
+.carousel-indicator {
+  width: 15px;
+
+  height: 15px;
+
+  border-radius: 30%;
+
+  border: none;
+
+  padding: 0;
+
+  /* background: rgba(1,108,51,0.3); */
+  background: var(--green-deep);
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.carousel-indicator.active {
+  background: var(--gold);
+
+  transform: scale(1.8);
+}
