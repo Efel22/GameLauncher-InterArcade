@@ -95,9 +95,9 @@
 
   top: var(--cart-inset-top);
 
-  left: var(--cart-inset-left);
+  left: var(--cart-inset-x);
 
-  right: var(--cart-inset-right);
+  right: var(--cart-inset-x);
 
   bottom: var(--cart-inset-bottom);
 
@@ -157,10 +157,11 @@
     drop-shadow(0 12px 28px rgba(0, 0, 0, 0.25));
 }
 
+/* UNUSED FOR NOW (adds a golden border to the game poster image itself (not the game cartridge) */
 .game-card-wrap.is-center .poster-slot {
-  box-shadow:
+  /* box-shadow:
     0 0 0 3px var(--gold),
-    0 8px 18px rgba(0, 0, 0, 0.3);
+    0 8px 18px rgba(0, 0, 0, 0.3); */
 }
 
 /* ============================================================

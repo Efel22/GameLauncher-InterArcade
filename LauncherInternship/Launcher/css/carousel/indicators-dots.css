@@ -38,7 +38,7 @@
   padding: 0;
 
   /* background: rgba(1,108,51,0.3); */
-  background: var(--green-deep);
+  background: var(--gold-dark);
 
   transition:
     transform 0.2s ease,

@@ -26,6 +26,7 @@
 
   --card-w: 210px;
   --card-h: 283px;
+  --color-gamecartidge-gray: #3c414e;
 
   /*
        Single knob to make every cartridge + poster bigger or
@@ -33,7 +34,7 @@
        1.5, etc. Card height and carousel spacing both follow
        this automatically.
     */
-  --card-scale: 1.75;
+  --card-scale: 1.5;
 
   /*
        Where the "screen" of the cartridge artwork sits,
@@ -42,10 +43,10 @@
        they control how much of the cartridge border shows
        around the poster.
     */
-  --cart-inset-top: 15%;
-  --cart-inset-x: 26%;
-  --cart-inset-left: 25.5%; /* The image is not reallt centered */
-  --cart-inset-right: 26.25%;
-  --cart-inset-bottom: 14%;
-  --cart-radius: 10px;
+  --cart-inset-top: 32.5%;
+  --cart-inset-x: 12%;
+  /* --cart-inset-left: 20%;
+  --cart-inset-right: 20%; */
+  --cart-inset-bottom: 12.5%;
+  --cart-radius: 1px;
 }

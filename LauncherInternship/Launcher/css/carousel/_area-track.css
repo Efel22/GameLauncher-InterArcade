@@ -27,7 +27,7 @@
 .carousel {
   position: relative;
   width: 100%;
-  height: 680px;
+  height: 680px; /* ORIGIANL IS 680 */
   overflow: hidden;
 
   display: flex;

@@ -136,7 +136,7 @@ let currentIndex = 0;
    proportionally spaced no matter how big you make them.
 */
 
-const BASE_CARD_SPACING = 200;
+const BASE_CARD_SPACING = 150;
 
 /*
    How much smaller the side cards become.
