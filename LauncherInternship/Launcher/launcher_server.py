@@ -71,6 +71,14 @@ PORT = 8765
 WEB_ROOT = BASE_DIR.parent
 
 
+# Root folder that contains the actual game executables. Anything
+# launched via POST /launch must resolve to a path inside this
+# folder - this stops a stray or forged request from being able to
+# launch an arbitrary program elsewhere on the machine.
+
+ARCADE_GAMES_ROOT = (BASE_DIR.parent.parent / "ArcadeGames").resolve()
+
+
 # ============================================================
 # CONTENT TYPES
 # ============================================================
@@ -1034,6 +1042,29 @@ class Handler(BaseHTTPRequestHandler):
 
 
         # ----------------------------------------------------
+        # Keep requests confined to WEB_ROOT.
+        #
+        # Without this, a request like
+        # "/../../../Windows/win.ini" would resolve outside
+        # WEB_ROOT and let this handler read and serve back
+        # arbitrary files elsewhere on the machine.
+        # ----------------------------------------------------
+
+        try:
+
+            target.relative_to(WEB_ROOT)
+
+        except ValueError:
+
+            self.send_error(
+                404,
+                f"Not found: {url_path}"
+            )
+
+            return
+
+
+        # ----------------------------------------------------
         # Check file
         # ----------------------------------------------------
 
@@ -1212,7 +1243,41 @@ class Handler(BaseHTTPRequestHandler):
             exe = (
                 BASE_DIR
                 / exe
-            ).resolve()
+            )
+
+
+        exe = exe.resolve()
+
+
+        # ----------------------------------------------------
+        # Keep launches confined to ARCADE_GAMES_ROOT.
+        #
+        # The client only ever offers the games listed in
+        # launcher.html's GAMES array, but nothing stops a
+        # different local request from posting an arbitrary
+        # path here instead. This makes sure whatever we
+        # actually launch lives under the games folder,
+        # regardless of what the client sent.
+        # ----------------------------------------------------
+
+        try:
+
+            exe.relative_to(ARCADE_GAMES_ROOT)
+
+        except ValueError:
+
+            self._json_response(
+                403,
+                {
+                    "ok": False,
+                    "error": (
+                        "Executable is outside the allowed "
+                        "games folder"
+                    )
+                }
+            )
+
+            return
 
 
         # ----------------------------------------------------

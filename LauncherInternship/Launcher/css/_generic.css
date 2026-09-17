@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: var(--font), sans-serif;
+  background-color: var(--cream-bg);
+  background-image: url("/assets/images/launcher/bg_interbayamon.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+
+  text-shadow:
+    -1px -1px 0 rgba(0, 0, 0, 0.8),
+    1px -1px 0 rgba(0, 0, 0, 0.8),
+    -1px 1px 0 rgba(0, 0, 0, 0.8),
+    1px 1px 0 rgba(0, 0, 0, 0.8),
+    0px 2px 0 rgba(0, 0, 0, 0.35),
+    4px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+#app {
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Audiowide";
+  src: url("/assets/font/Audiowide/Audiowide-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

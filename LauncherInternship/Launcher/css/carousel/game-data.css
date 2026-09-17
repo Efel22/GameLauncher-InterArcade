@@ -1,0 +1,60 @@
+/* ============================================================
+     GAME TITLE
+     ============================================================ */
+
+.game-title {
+  margin-top: 6px;
+
+  text-align: center;
+
+  color: var(--text-gametitle);
+
+  font-weight: 800;
+
+  font-size: var(--font-size-gametitle);
+  /* font-size: 15px; */
+
+  text-transform: uppercase;
+
+  line-height: 1.25;
+
+  max-width: calc(var(--card-w) * var(--card-scale));
+
+  opacity: 0;
+
+  transform: translateY(-4px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+
+  pointer-events: none;
+}
+
+.game-card-wrap.is-center .game-title {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* ============================================================
+     GAME TYPE
+     ============================================================ */
+
+.game-type {
+  margin-top: 3px;
+
+  color: var(--text-type);
+
+  font-size: var(--font-size-gametype);
+
+  font-weight: 600;
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+}
+
+.game-card-wrap.is-center .game-type {
+  opacity: 1;
+}
