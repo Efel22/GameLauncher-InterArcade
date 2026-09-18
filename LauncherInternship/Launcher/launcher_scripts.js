@@ -116,7 +116,7 @@ const GAMES = [
   {
     name: "Inter Tiger Adventures",
 
-    poster: "assets/images/posters/vanishing_stars.png",
+    poster: "assets/images/posters/inter_tiger_adventures.png",
 
     exe: "http://127.0.0.1:8765/Launcher/WebGLGames/InterTigerAdventures/index.html",
 
@@ -516,7 +516,7 @@ document.addEventListener("keydown", (event) => {
    LAUNCH GAME
 
    The browser sends the game path to
-   launcher_server.py.
+   __launcher.py.
 
    The Python server handles subprocess.Popen().
    ============================================================ */
@@ -665,9 +665,67 @@ function startLoadingScreen(game) {
 
   progress.style.width = '0%';
 
+  /* Actually launch the game */
+
+  fetch('/launch', {
+
+    method: 'POST',
+
+    headers: {
+      'Content-Type': 'application/json'
+    },
+
+    body: JSON.stringify({
+      exe: game.exe
+    })
+
+  })
+
+  .then(
+    res =>
+      res.json().catch(
+        () => ({
+          ok: false,
+          error: `HTTP ${res.status}`
+        })
+      )
+  )
+
+  .then(data => {
+
+    if (data.ok) {
+
+      setTimeout(() => {
+        loadingScreen.classList.remove('show');
+      }, 500);
+
+    } else {
+
+      loadingText.textContent =
+        `Could not launch "${game.name}"`;
+
+      setTimeout(() => {
+        loadingScreen.classList.remove('show');
+      }, 2000);
+
+    }
+
+  })
+
+  .catch(() => {
+
+    loadingText.textContent =
+      'Could not reach launcher server.';
+
+    setTimeout(() => {
+      loadingScreen.classList.remove('show');
+    }, 2500);
+
+  });
+
   let elapsed = 0;
 
-  const totalTime = 15000;
+  const totalTime = 10000;
 
   const interval =
     setInterval(() => {
@@ -689,22 +747,27 @@ function startLoadingScreen(game) {
       if (percent < 20) {
 
         loadingText.textContent =
-          'Reading cartridge...';
+          'Loading game data...';
 
       } else if (percent < 45) {
 
         loadingText.textContent =
-          'Loading game data...';
+          'Hang in there...';
 
       } else if (percent < 70) {
 
         loadingText.textContent =
-          'Preparing game world...';
+          'Preparing cool awesomeness...';
 
       } else if (percent < 90) {
 
         loadingText.textContent =
           'Starting game...';
+
+      } else if (percent < 95) {
+
+        loadingText.textContent =
+          'I <3 Inter Bayamón';
 
       } else {
 
@@ -726,63 +789,7 @@ function startLoadingScreen(game) {
           'Launching!';
 
 
-        /* Actually launch the game */
-
-        fetch('/launch', {
-
-          method: 'POST',
-
-          headers: {
-            'Content-Type': 'application/json'
-          },
-
-          body: JSON.stringify({
-            exe: game.exe
-          })
-
-        })
-
-        .then(
-          res =>
-            res.json().catch(
-              () => ({
-                ok: false,
-                error: `HTTP ${res.status}`
-              })
-            )
-        )
-
-        .then(data => {
-
-          if (data.ok) {
-
-            setTimeout(() => {
-              loadingScreen.classList.remove('show');
-            }, 500);
-
-          } else {
-
-            loadingText.textContent =
-              `Could not launch "${game.name}"`;
-
-            setTimeout(() => {
-              loadingScreen.classList.remove('show');
-            }, 2000);
-
-          }
-
-        })
-
-        .catch(() => {
-
-          loadingText.textContent =
-            'Could not reach launcher server.';
-
-          setTimeout(() => {
-            loadingScreen.classList.remove('show');
-          }, 2500);
-
-        });
+        
 
       }
 
@@ -823,7 +830,7 @@ function startLoadingScreen(game) {
 
 //     .catch(() => {
 //       showToast(
-//         `Could not reach launcher_server.py — run it and open this page from there.`,
+//         `Could not reach __launcher.py — run it and open this page from there.`,
 //       );
 //     });
 // }
