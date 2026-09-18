@@ -114,13 +114,13 @@ const GAMES = [
   },
 
   {
-    name: "Vanishing Stars",
+    name: "Inter Tiger Adventures",
 
     poster: "assets/images/posters/vanishing_stars.png",
 
-    exe: "../../ArcadeGames/VanishingStars/Windows/Vanishing Stars.exe",
+    exe: "http://127.0.0.1:8765/Launcher/WebGLGames/InterTigerAdventures/index.html",
 
-    type: "Action",
+    type: "Educational",
   },
 ];
 
