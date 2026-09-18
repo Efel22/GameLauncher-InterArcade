@@ -178,3 +178,68 @@ Press Ctrl+C in this window to stop the launcher.
 [launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
 [launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
 [launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+[Thu 09/17/2026 22:00:52.14] Starting launcher_server.py... 
+[Thu 09/17/2026 22:00:52.85] launcher_server.py stopped (exit code -1). Restarting in 3 seconds... 
+[Thu 09/17/2026 22:00:52.86] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Thu 09/17/2026 22:00:52.86] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Thu 09/17/2026 22:00:54.14] Starting launcher_server.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Could not find Google Chrome.
+[launcher_server] Opening launcher using the default browser instead.
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
+[launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+
+[launcher_server] Launching: C:\Users\kenne\OneDrive\Documents\GitHub\GameLauncher-InterArcade\ArcadeGames\LockedInArea51\TigerGameJam.exe
+[launcher_server] Game PID: 34468
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Could not find the game window after 15 seconds:
+    C:\Users\kenne\OneDrive\Documents\GitHub\GameLauncher-InterArcade\ArcadeGames\LockedInArea51\TigerGameJam.exe
+
+[launcher_server] Launching: C:\Users\kenne\OneDrive\Documents\GitHub\GameLauncher-InterArcade\ArcadeGames\MemoriesOfLadein\MemoriesOfLadien_v1.1.3\Project_Fallen_Angel.exe
+[launcher_server] Game PID: 32268
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 2692038
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+
+[launcher_server] Launching: C:\Users\kenne\OneDrive\Documents\GitHub\GameLauncher-InterArcade\ArcadeGames\VanishingStars\Windows\Vanishing Stars.exe
+[launcher_server] Game PID: 15160
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 3541236
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
