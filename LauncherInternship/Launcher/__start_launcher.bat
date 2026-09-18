@@ -20,7 +20,7 @@ rem clearing here.
 rem ------------------------------------------------------------------
 
 powershell -NoProfile -Command ^
-    "Get-CimInstance Win32_Process -Filter \"Name LIKE 'python%%'\" | Where-Object { $_.CommandLine -like '*launcher_server.py*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"
+    "Get-CimInstance Win32_Process -Filter \"Name LIKE 'python%%'\" | Where-Object { $_.CommandLine -like '*__launcher.py*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"
 powershell -NoProfile -Command ^
     "Get-CimInstance Win32_Process -Filter \"Name='chrome.exe'\" | Where-Object { $_.CommandLine -like '*--kiosk*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"
 
@@ -40,11 +40,11 @@ rem ------------------------------------------------------------------
 for %%A in ("launcher_log.txt") do if %%~zA GTR 5242880 move /y "launcher_log.txt" "launcher_log.old.txt" >nul
 
 :loop
-echo [%date% %time%] Starting launcher_server.py... >> launcher_log.txt
+echo [%date% %time%] Starting __launcher.py... >> launcher_log.txt
 
 rem pythonw runs without popping its own console window. If "pythonw" isn't
 rem recognized, change this to "python" (you'll get a small console box too,
-rem but it'll still work). launcher_server.py serves launcher.html, opens
+rem but it'll still work). __launcher.py serves launcher.html, opens
 rem Chrome in kiosk mode, and handles /launch requests to start games.
 rem
 rem -u forces unbuffered stdout/stderr. Without it, Python block-buffers
@@ -53,9 +53,9 @@ rem messages (game launches, window search results) would actually
 rem show up in launcher_log.txt until the process exits cleanly - and
 rem since we force-kill it on every restart, that output was silently
 rem lost. -u makes it write to the log immediately, in real time.
-pythonw -u "%SCRIPT_DIR%launcher_server.py" >> launcher_log.txt 2>&1
+pythonw -u "%SCRIPT_DIR%__launcher.py" >> launcher_log.txt 2>&1
 
-echo [%date% %time%] launcher_server.py stopped (exit code %errorlevel%). Restarting in 3 seconds... >> launcher_log.txt
+echo [%date% %time%] __launcher.py stopped (exit code %errorlevel%). Restarting in 3 seconds... >> launcher_log.txt
 echo [%date% %time%] Note: this only fires if the SERVER process exits (crash, killed, etc). >> launcher_log.txt
 echo [%date% %time%] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. >> launcher_log.txt
 timeout /t 3 /nobreak >nul

@@ -16,11 +16,11 @@ echo (empty above this line means the LIKE filter matched zero processes) >> lau
 echo. >> launcher_diag.txt
 
 echo === Test: same query, but unfiltered by name, then filtered on CommandLine in PowerShell === >> launcher_diag.txt
-powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*launcher_server.py*' } | Select-Object ProcessId, Name, CommandLine | Format-List" >> launcher_diag.txt
+powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*__launcher.py*' } | Select-Object ProcessId, Name, CommandLine | Format-List" >> launcher_diag.txt
 echo. >> launcher_diag.txt
 
 echo === Test: full combined query exactly as start_launcher.bat runs it (dry run - lists only, does not kill) === >> launcher_diag.txt
-powershell -NoProfile -Command "Get-CimInstance Win32_Process -Filter \"Name LIKE 'python%%'\" | Where-Object { $_.CommandLine -like '*launcher_server.py*' } | Select-Object ProcessId, Name, CommandLine | Format-List" >> launcher_diag.txt
+powershell -NoProfile -Command "Get-CimInstance Win32_Process -Filter \"Name LIKE 'python%%'\" | Where-Object { $_.CommandLine -like '*__launcher.py*' } | Select-Object ProcessId, Name, CommandLine | Format-List" >> launcher_diag.txt
 echo (empty above this line means the combined filter matched zero processes) >> launcher_diag.txt
 
 echo. >> launcher_diag.txt

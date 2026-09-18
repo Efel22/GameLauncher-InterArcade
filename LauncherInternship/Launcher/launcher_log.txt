@@ -178,3 +178,87 @@ Press Ctrl+C in this window to stop the launcher.
 [launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
 [launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
 [launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+[jue 09/17/2026 21:17:57.18] Starting launcher_server.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Opening Chrome in kiosk mode...
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
+[launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[jue 09/17/2026 21:59:13.13] Starting __launcher.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Opening Chrome in kiosk mode...
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/css/animations/open-game.css HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
+[launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
