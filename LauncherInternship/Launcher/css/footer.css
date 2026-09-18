@@ -1,0 +1,40 @@
+/* ============================================================
+                        FOOTER STRIP
+============================================================ */
+
+@keyframes checker-scroll {
+  from {
+    background-position: 0 bottom;
+  }
+
+  to {
+    background-position: -84px bottom;
+  }
+}
+
+.footer-strip {
+  position: relative;
+  z-index: 1;
+
+  height: 94px;
+
+  flex-shrink: 0;
+
+  background-image: url("/assets/images/launcher/yellow_checker.png");
+
+  background-repeat: repeat-x;
+
+  background-position: 0 bottom;
+
+  background-size: auto 84px;
+
+  image-rendering: pixelated;
+
+  image-rendering: -moz-crisp-edges;
+
+  image-rendering: crisp-edges;
+
+  animation: checker-scroll 2s linear infinite;
+}
+
+

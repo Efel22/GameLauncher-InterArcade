@@ -1,0 +1,61 @@
+/* ============================================================
+     CAROUSEL ARROWS
+     ============================================================ */
+
+.carousel-btn {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 58px;
+
+  height: 58px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 34px;
+
+  line-height: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 20;
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--gold-dark);
+
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.carousel-btn.left {
+  left: 28px;
+}
+
+.carousel-btn.right {
+  right: 28px;
+}

@@ -8,5 +8,7 @@ light gray: #47535D
 dark gray: #3E4559
 
 
+ASPECT RATIO FOR GAME CARTIDGES
+857 x 643 (closest is 4:3)
 
 

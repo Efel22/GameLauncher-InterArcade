@@ -1,0 +1,16 @@
+/* ============================================================
+     SELECTED GAME INSTRUCTION
+============================================================ */
+
+.carousel-hint {
+  color: var(--text-carouselhint);
+  position: relative;
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%);
+  width: max-content;
+  text-align: center;
+  z-index: 10;
+  font-weight: 300;
+  font-size: var(--font-size-carouselhint);
+}
