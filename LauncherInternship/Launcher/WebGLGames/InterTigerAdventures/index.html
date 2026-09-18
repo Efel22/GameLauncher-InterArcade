@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Unity Web Player | The Inter Tiger Adventures</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-logo-title-footer"></div>
+        <div id="unity-fullscreen-button" title="Fullscreen"></div>
+        <div id="unity-build-title">The Inter Tiger Adventures</div>
+      </div>
+    </div>
+    <script>
+      var canvas = document.querySelector("#unity-canvas");
+      var unityInstance = null;
+      var container = document.querySelector("#unity-container");
+
+      var GAME_WIDTH = 1280;
+      var GAME_HEIGHT = 720;
+      var GAME_ASPECT = GAME_WIDTH / GAME_HEIGHT;
+
+      var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      var isAndroid = /Android/i.test(navigator.userAgent);
+      var isMobile = isIOS || isAndroid;
+
+      var layoutState = {
+        iosImmersive: false
+      };
+
+      var unityResizeSyncScheduled = false;
+        function syncUnityCanvasSizeSoon() {
+          if (unityResizeSyncScheduled) return;
+          unityResizeSyncScheduled = true;
+          requestAnimationFrame(function () {
+            unityResizeSyncScheduled = false;
+            window.dispatchEvent(new Event("resize"));
+          });
+        }
+
+      function unityShowBanner(msg, type) {
+        var warningBanner = document.querySelector("#unity-warning");
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? "block" : "none";
+        }
+        var div = document.createElement("div");
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == "error") div.style = "background: red; padding: 10px;";
+        else {
+          if (type == "warning") div.style = "background: yellow; padding: 10px;";
+          setTimeout(function () {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
+
+      function ExitFullscreenFromUnity() {
+        layoutState.iosImmersive = false;
+        document.body.classList.remove("ios-immersive");
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          var exitFs = document.exitFullscreen || document.webkitExitFullscreen
+                    || document.mozCancelFullScreen || document.msExitFullscreen;
+          if (exitFs) exitFs.call(document);
+        }
+        applyLayout();
+      }
+
+      function isBrowserFullscreen() {
+        return !!(document.fullscreenElement || document.webkitFullscreenElement
+          || document.mozFullScreenElement || document.msFullscreenElement);
+      }
+
+      function getVisualViewportSize() {
+        if (window.visualViewport) {
+          return { w: window.visualViewport.width, h: window.visualViewport.height };
+        }
+        return { w: window.innerWidth, h: window.innerHeight };
+      }
+
+      function footerVisibleHeight() {
+        var footer = document.querySelector("#unity-footer");
+        if (!footer || footer.style.display === "none") return 0;
+        return footer.getBoundingClientRect().height;
+      }
+
+      function ensureDesktopBackingStore() {
+        if (!isMobile) {
+          canvas.width = GAME_WIDTH;
+          canvas.height = GAME_HEIGHT;
+        }
+      }
+
+      function applyLayout() {
+        ensureDesktopBackingStore();
+
+        var vv = getVisualViewportSize();
+        var availW = vv.w;
+        var availH = vv.h;
+
+        if (!isBrowserFullscreen() && !layoutState.iosImmersive) {
+          availH -= footerVisibleHeight();
+        }
+        availW = Math.max(1, availW);
+        availH = Math.max(1, availH);
+
+        if (isMobile) {
+          var useLandscapeHack = isAndroid && (window.innerWidth > window.innerHeight);
+          var footer = document.querySelector("#unity-footer");
+          if (footer) footer.style.display = useLandscapeHack ? "none" : "";
+
+          if (useLandscapeHack) {
+            canvas.style.position = "relative";
+            canvas.style.width = "100vw";
+            canvas.style.height = "100vh";
+            canvas.style.objectFit = "contain";
+            canvas.style.background = "#000";
+          } else {
+            canvas.style.position = "";
+            canvas.style.width = "100vw";
+            canvas.style.height = "auto";
+            canvas.style.objectFit = "";
+            canvas.style.background = "";
+          }
+          canvas.style.marginLeft = "auto";
+          canvas.style.marginRight = "auto";
+          canvas.style.display = "block";
+        } else {
+          canvas.style.position = "";
+          canvas.style.objectFit = "";
+          canvas.style.display = "block";
+
+          if (isBrowserFullscreen()) {
+            var containerAspect = availW / availH;
+            var cssW, cssH;
+            if (containerAspect > GAME_ASPECT) {
+              cssH = availH;
+              cssW = cssH * GAME_ASPECT;
+            } else {
+              cssW = availW;
+              cssH = cssW / GAME_ASPECT;
+            }
+            canvas.style.width = Math.floor(cssW) + "px";
+            canvas.style.height = Math.floor(cssH) + "px";
+            canvas.style.aspectRatio = "";
+            canvas.style.background = "#000";
+          } else {
+            canvas.style.width = "80vw";
+            canvas.style.height = "auto";
+            canvas.style.aspectRatio = GAME_WIDTH + " / " + GAME_HEIGHT;
+            canvas.style.background = "";
+          }
+          canvas.style.marginLeft = "auto";
+          canvas.style.marginRight = "auto";
+        }
+
+        //window.dispatchEvent(new Event("resize"));
+      }
+
+      function setMobileClasses() {
+        if (isMobile) {
+          container.classList.remove("unity-desktop");
+          container.classList.add("unity-mobile");
+          canvas.classList.add("unity-mobile");
+        }
+      }
+
+      function resumeAudioContextOnce() {
+        try {
+          var AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) {
+            var ctx = new AudioCtx();
+            if (ctx.state === "suspended") ctx.resume();
+          }
+        } catch (e) {}
+        if (typeof WEBAudio !== "undefined" && WEBAudio.audioContext)
+          WEBAudio.audioContext.resume();
+      }
+
+      setMobileClasses();
+
+      if (isMobile) {
+        var meta = document.createElement("meta");
+        meta.name = "viewport";
+        meta.content = "width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes, viewport-fit=cover";
+        document.head.appendChild(meta);
+
+        document.addEventListener("touchstart", resumeAudioContextOnce, { once: true });
+        document.addEventListener("touchend", resumeAudioContextOnce, { once: true });
+        document.addEventListener("click", resumeAudioContextOnce, { once: true });
+      } else {
+        var dm = document.querySelector('meta[name="viewport"]');
+        if (!dm) {
+          dm = document.createElement("meta");
+          dm.name = "viewport";
+          dm.content = "width=device-width, initial-scale=1.0";
+          document.head.appendChild(dm);
+        }
+      }
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/InterTigerAdventures.loader.js";
+
+      var config = {
+        dataUrl: buildUrl + "/InterTigerAdventures.data.unityweb",
+        frameworkUrl: buildUrl + "/InterTigerAdventures.framework.js.unityweb",
+        codeUrl: buildUrl + "/InterTigerAdventures.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Intern Tiger Studios",
+        productName: "The Inter Tiger Adventures",
+        productVersion: "1.0",
+        showBanner: unityShowBanner
+      };
+
+      if (isIOS) {
+        config.matchWebGLToCanvasSize = true;
+      } else if (isAndroid) {
+        //config.devicePixelRatio = 1;
+        config.matchWebGLToCanvasSize = true;
+      } else {
+        config.matchWebGLToCanvasSize = false;
+        config.devicePixelRatio = 1;
+        canvas.width = GAME_WIDTH;
+        canvas.height = GAME_HEIGHT;
+        canvas.style.width = "80vw";
+        canvas.style.height = "auto";
+        canvas.style.aspectRatio = GAME_WIDTH + " / " + GAME_HEIGHT;
+      }
+
+      document.querySelector("#unity-loading-bar").style.display = "block";
+
+      function syncUnityFullscreenFlag() {
+        var fs = isBrowserFullscreen();
+        if (unityInstance && unityInstance.SetFullscreen) {
+          try { unityInstance.SetFullscreen(fs ? 1 : 0); } catch (e) {}
+        }
+      }
+
+      function onFullscreenChange() {
+        if (!isBrowserFullscreen()) {
+          document.body.classList.remove("ios-immersive");
+          layoutState.iosImmersive = false;
+        }
+        syncUnityFullscreenFlag();
+        applyLayout();
+        syncUnityCanvasSizeSoon();
+      }
+
+      document.addEventListener("fullscreenchange", onFullscreenChange);
+      document.addEventListener("webkitfullscreenchange", onFullscreenChange);
+      document.addEventListener("mozfullscreenchange", onFullscreenChange);
+      document.addEventListener("MSFullscreenChange", onFullscreenChange);
+
+      window.addEventListener("resize", function () { applyLayout(); });
+      window.addEventListener("orientationchange", function () { 
+        setTimeout(applyLayout, 300); 
+        setTimeout(applyLayout, 600);
+      });
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", applyLayout);
+        window.visualViewport.addEventListener("scroll", applyLayout);
+      }
+
+      var loadingTimeout = setTimeout(function () {
+        if (!unityInstance) {
+          unityShowBanner("Error: el juego tardó demasiado en cargar. Verifica tu conexión o recarga la página.", "error");
+        }
+      }, 90000);
+
+      
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onerror = function () {
+        clearTimeout(loadingTimeout);
+        unityShowBanner("Error: no se pudo cargar el juego. Verifica tu conexión o recarga la página.", "error");
+      };
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+        }).then((instance) => {
+          unityInstance = instance;
+          clearTimeout(loadingTimeout);
+          document.querySelector("#unity-loading-bar").style.display = "none";
+          document.querySelector("#unity-fullscreen-button").style.display = "block";
+          applyLayout();
+
+          var fsBtn = document.querySelector("#unity-fullscreen-button");
+          if (!fsBtn) return;
+
+          fsBtn.onclick = function () {
+            if (isBrowserFullscreen()) {
+              ExitFullscreenFromUnity();
+              return;
+            }
+
+            if (layoutState.iosImmersive) {
+              layoutState.iosImmersive = false;
+              document.body.classList.remove("ios-immersive");
+              applyLayout();
+              return;
+            }
+
+            var el = container;
+            var req = el.requestFullscreen || el.webkitRequestFullscreen
+                  || el.mozRequestFullScreen || el.msRequestFullscreen;
+
+            if (req) {
+              var p = req.call(el);
+              if (p && typeof p.then === "function") {
+                p.then(function () { applyLayout(); })
+                .catch(function () {
+                  if (isIOS) {
+                    layoutState.iosImmersive = true;
+                    document.body.classList.add("ios-immersive");
+                    applyLayout();
+                  }
+                });
+              } else {
+                applyLayout();
+              }
+            } else if (isIOS) {
+              layoutState.iosImmersive = true;
+              document.body.classList.add("ios-immersive");
+              applyLayout();
+            }
+          };
+      }).catch((message) => {
+          clearTimeout(loadingTimeout);
+          unityShowBanner("Error al iniciar el juego: " + message, "error");
+        });
+      };
+
+      document.body.appendChild(script);
+    </script>
+
+    <script defer src="/_vercel/insights/script.js"></script> <!-- Remove if vercel app is not in use. -->
+  </body>
+</html>
