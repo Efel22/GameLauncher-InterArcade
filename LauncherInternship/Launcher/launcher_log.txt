@@ -262,3 +262,281 @@ Press Ctrl+C in this window to stop the launcher.
 [launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
 [launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
 [launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+[mar 09/22/2026 10:57:04.12] Starting __launcher.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Opening Chrome in kiosk mode...
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/animations/open-game.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
+[launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\MasterWorkforceProject\Windows\ProyectoEmergencia.exe
+[launcher_server] Game PID: 36444
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 67894
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\MemoriesOfLadein\MemoriesOfLadien_v1.1.3\Project_Fallen_Angel.exe
+[launcher_server] Game PID: 68192
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 133414
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+[mar 09/22/2026 11:04:34.20] Starting __launcher.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Opening Chrome in kiosk mode...
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/animations/open-game.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
+[launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\LockedInArea51\TigerGameJam.exe
+[launcher_server] Game PID: 77376
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Could not find the game window after 15 seconds:
+    C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\LockedInArea51\TigerGameJam.exe
+[mar 09/22/2026 11:06:14.18] Starting __launcher.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Opening Chrome in kiosk mode...
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/animations/open-game.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
+[launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\LockedInArea51\TigerGameJam.exe
+[launcher_server] Game PID: 24728
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 460954
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\MemoriesOfLadein\MemoriesOfLadien_v1.1.3\Project_Fallen_Angel.exe
+[launcher_server] Game PID: 11616
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 526472
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+[mar 09/22/2026 11:10:11.13] Starting __launcher.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Opening Chrome in kiosk mode...
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/animations/open-game.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
+[launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\MemoriesOfLadein\MemoriesOfLadien_v1.1.3\Project_Fallen_Angel.exe
+[launcher_server] Game PID: 70288
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 1247508
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\MemoriesOfLadein\MemoriesOfLadien_v1.1.3\Project_Fallen_Angel.exe
+[launcher_server] Game PID: 77976
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 1247544
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\MemoriesOfLadein\MemoriesOfLadien_v1.1.3\Project_Fallen_Angel.exe
+[launcher_server] Game PID: 79348
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 984472
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\MasterWorkforceProject\Windows\ProyectoEmergencia.exe
+[launcher_server] Game PID: 49528
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 1377702
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/animations/open-game.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\LockedInArea51\TigerGameJam.exe
+[launcher_server] Game PID: 56380
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 1247368
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\LockedInArea51\TigerGameJam.exe
+[launcher_server] Game PID: 62772
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 1443194
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
+
+[launcher_server] Launching: C:\Users\eliel\Desktop\LauncherInternado\LauncherInternado\ArcadeGames\LockedInArea51\TigerGameJam.exe
+[launcher_server] Game PID: 8616
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 200 -
+[launcher_server] Found game window: 3279140
+[launcher_server] Game window brought to foreground.
+[launcher_server] Game successfully activated.
