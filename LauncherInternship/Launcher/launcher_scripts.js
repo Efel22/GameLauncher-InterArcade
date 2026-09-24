@@ -532,120 +532,98 @@ function launchGame(game) {
     return;
   }
 
-  const cartridge =
-    selectedCard.querySelector('.cartridge-frame');
+  const cardEl =
+    selectedCard.querySelector('.game-card');
 
-  if (!cartridge) {
+  if (!cardEl) {
+    startLoadingScreen(game);
     return;
   }
 
-
   /* ------------------------------------------------------------
-     Find the starting position of the cartridge
+     Find the starting position of the whole card
+     (poster + cartridge frame together)
      ------------------------------------------------------------ */
 
   const startRect =
-    cartridge.getBoundingClientRect();
-
-
-  /* ------------------------------------------------------------
-     Find the cartridge slot
-     ------------------------------------------------------------ */
-
-  const slot =
-    document.getElementById('cartridge-slot');
-
-  const slotRect =
-    slot.getBoundingClientRect();
-
+    cardEl.getBoundingClientRect();
 
   /* ------------------------------------------------------------
-     Clone the cartridge so the original stays in place
+     Clone the entire card — poster slot AND cartridge frame —
+     so both scale up together
      ------------------------------------------------------------ */
 
-  const flyingCartridge =
-    cartridge.cloneNode(true);
+  const flyingPoster =
+    document.createElement('div');
 
-  flyingCartridge.classList.add(
-    'flying-cartridge'
-  );
+  flyingPoster.className = 'flying-poster';
 
-  document.body.appendChild(
-    flyingCartridge
-  );
+  const clonedCard =
+    cardEl.cloneNode(true);
 
+  flyingPoster.appendChild(clonedCard);
 
-  /* Starting position */
+  document.body.appendChild(flyingPoster);
 
-  flyingCartridge.style.left =
-    startRect.left + 'px';
+  /* Starting position (matches the card exactly) */
 
-  flyingCartridge.style.top =
-    startRect.top + 'px';
-
-  flyingCartridge.style.width =
-    startRect.width + 'px';
-
-  flyingCartridge.style.height =
-    startRect.height + 'px';
-
+  flyingPoster.style.left = startRect.left + 'px';
+  flyingPoster.style.top = startRect.top + 'px';
+  flyingPoster.style.width = startRect.width + 'px';
+  flyingPoster.style.height = startRect.height + 'px';
 
   /* Force browser to render starting position */
 
-  flyingCartridge.getBoundingClientRect();
-
+  flyingPoster.getBoundingClientRect();
 
   /* ------------------------------------------------------------
-     Animate cartridge into the slot
+     Target size: big and centered. Keeps the card's own
+     width:height ratio so the cartridge frame never distorts.
      ------------------------------------------------------------ */
 
-  const targetWidth =
-    startRect.width * 0.45;
+  const cardRatio =
+    startRect.height / startRect.width;
 
   const targetHeight =
-    startRect.height * 0.45;
+    Math.min(window.innerHeight * 0.75, 650);
 
-  flyingCartridge.style.left =
-    (
-      slotRect.left +
-      slotRect.width / 2 -
-      targetWidth / 2
-    ) + 'px';
+  const targetWidth =
+    targetHeight / cardRatio;
 
-  flyingCartridge.style.top =
-    (
-      slotRect.top -
-      targetHeight * 0.35
-    ) + 'px';
+  const targetLeft =
+    (window.innerWidth - targetWidth) / 2;
 
-  flyingCartridge.style.width =
-    targetWidth + 'px';
+  const targetTop =
+    (window.innerHeight - targetHeight) / 2;
 
-  flyingCartridge.style.height =
-    targetHeight + 'px';
+  requestAnimationFrame(() => {
 
-  flyingCartridge.style.transform =
-    'rotate(0deg)';
+    flyingPoster.classList.add('is-expanded');
 
+    flyingPoster.style.left = targetLeft + 'px';
+    flyingPoster.style.top = targetTop + 'px';
+    flyingPoster.style.width = targetWidth + 'px';
+    flyingPoster.style.height = targetHeight + 'px';
+
+  });
 
   /* ------------------------------------------------------------
-     After cartridge animation finishes
+     Hold, then fade into the loading screen
      ------------------------------------------------------------ */
 
   setTimeout(() => {
 
-    flyingCartridge.style.transform =
-      'translateY(35px)';
+    flyingPoster.classList.add('is-fading');
 
     setTimeout(() => {
 
-      flyingCartridge.remove();
+      flyingPoster.remove();
 
       startLoadingScreen(game);
 
-    }, 400);
+    }, 700);
 
-  }, 900);
+  }, 1800);
 
 }
 
@@ -663,7 +641,7 @@ function startLoadingScreen(game) {
 
   loadingScreen.classList.add('show');
 
-  progress.style.width = '0%';
+  progress.style.width = '1%';
 
   /* Actually launch the game */
 
