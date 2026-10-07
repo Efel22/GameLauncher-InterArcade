@@ -540,3 +540,174 @@ Press Ctrl+C in this window to stop the launcher.
 [launcher_server] Found game window: 3279140
 [launcher_server] Game window brought to foreground.
 [launcher_server] Game successfully activated.
+[Wed 10/07/2026 13:17:17.19] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:17.42] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:17.42] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:17.42] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:20.15] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:20.26] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:20.26] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:20.26] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:23.20] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:23.30] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:23.30] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:23.30] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:25.20] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:25.34] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:25.34] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:25.34] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:26.13] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:26.26] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:26.26] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:26.26] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:28.17] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:28.30] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:28.30] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:28.30] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:34.15] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:34.29] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:34.29] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:34.29] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:37.12] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:37.26] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:37.27] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:37.27] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:38.14] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:38.28] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:38.28] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:38.28] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:40.10] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:40.22] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:40.22] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:40.23] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:41.11] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:41.22] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:41.22] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:41.22] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:43.16] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:43.27] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:43.27] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:43.27] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:44.15] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:44.27] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:44.27] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:44.27] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:46.10] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:46.22] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:46.22] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:46.22] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:49.15] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:49.27] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:49.27] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:49.27] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:17:52.10] Starting __launcher.py... 
+Traceback (most recent call last):
+  File "C:\Users\kenne\Documents\GitHub\GameLauncher-InterArcade\LauncherInternship\Launcher\__launcher.py", line 41, in <module>
+    import validators
+ModuleNotFoundError: No module named 'validators'
+[Wed 10/07/2026 13:17:52.23] __launcher.py stopped (exit code 1). Restarting in 3 seconds... 
+[Wed 10/07/2026 13:17:52.23] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 13:17:52.23] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 13:19:46.13] Starting __launcher.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Could not find Google Chrome.
+[launcher_server] Opening launcher using the default browser instead.
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/animations/open-game.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - code 404, message Not found: /favicon.ico
+[launcher_server] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
