@@ -711,3 +711,95 @@ Press Ctrl+C in this window to stop the launcher.
 [launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
 [launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
 [launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
+[Wed 10/07/2026 17:41:39.13] __launcher.py stopped (exit code -1). Restarting in 3 seconds... 
+[Wed 10/07/2026 17:41:39.13] Note: this only fires if the SERVER process exits (crash, killed, etc). 
+[Wed 10/07/2026 17:41:39.13] Closing just the Chrome kiosk window does NOT stop the server or trigger a restart. 
+[Wed 10/07/2026 17:41:40.15] Starting __launcher.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Could not find Google Chrome.
+[launcher_server] Opening launcher using the default browser instead.
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/animations/open-game.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 404 -
+[Wed 10/07/2026 17:42:59.14] Starting __launcher.py... 
+
+============================================================
+       INTER ARCADE GAMES LAUNCHER
+============================================================
+
+Server running at: http://127.0.0.1:8765/
+
+Chrome will open in kiosk mode.
+Games will automatically be brought to the foreground.
+
+Press Ctrl+C in this window to stop the launcher.
+
+[launcher_server] Could not find Google Chrome.
+[launcher_server] Opening launcher using the default browser instead.
+[launcher_server] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_generic.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/_variables.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/header.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/footer.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/buttons.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/_area-track.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/indicators-dots.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-card-and-cartidge.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/browse-instructions.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/launch_game_toast.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/carousel/game-data.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/animations/open-game.css HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /Launcher/css/responsive-adjustments.css HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /Launcher/launcher_scripts.js HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/tiger_interbayamon.png HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/name_interbayamon.png HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /assets/font/Audiowide/Audiowide-Regular.ttf HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/yellow_checker.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/bg_interbayamon.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/launcher/stylized_game_cartridge.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/locked_in_area_51.png HTTP/1.1" 200 -[launcher_server] 127.0.0.1 - "GET /assets/images/posters/memories_of_ladein.png HTTP/1.1" 200 -
+
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/project_emergency.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/vanishing_stars.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "GET /assets/images/posters/inter_tiger_adventures.png HTTP/1.1" 200 -
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 404 -
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 404 -
+[launcher_server] 127.0.0.1 - "POST /launch HTTP/1.1" 404 -
